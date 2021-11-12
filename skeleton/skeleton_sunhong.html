@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: WHITE;
+  padding: px;
+  text-align: left;
+  font-size: 35px;
+  color: #FF0000;
+}
+
+
+/* Style the list inside the menu */
+
+article {
+  float: right;
+  padding: 20px;
+  width: 75%;
+  background-color: #f1f1f1;
+  height: 400px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: BLACK;
+  padding: px;
+  text-align: right;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+
+<header>
+  <h2>KHURONA</h2>
+</header>
+
+<div class="Card">
+  <div class="CardInner">
+  <label>선별진료소 검색기</label>
+  <div class="container">
+    
+    <div class="InputContainer">
+      <input placeholder="도시이름을 입력하세요."/>
+    </div>
+  </div>
+ </div>
+</div>
+
+
+
+<section>
+  
+  <article>
+   
+	<h1>코로나 관련 정보</h1>
+    <p>여기에 api넣으면 될 것 같습니다.</p>  </article>
+  
+	</iframe width="1000px"
+			 height="500px"
+			 frameborder="0px"
+			 style="border:0px"
+			 src="https://www.google.com/maps/embed/v1/search?q=Seoul&key=AIzaSyAm2M0JDTJtD7PJohjLSs3ugAJKkKCYHVE">
+	</iframe>
+	
+<h2>지역별 거리 두기 단계 현황</h2>
+<img src="대한민국(한국)지도.jpg" alt="T" width="300" height="400">
+</section>
+
+<footer>
+  <p>2018102189 박선홍
+  2018102189 김진환
+  2018102189 최우성
+  </p>
+  
+
+</footer>
+
+</body>
+</html>
+
