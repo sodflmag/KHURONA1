@@ -8,11 +8,13 @@
     padding: 0px;
     color: #000;
 }
-
+body {
+    width:2000px;
+}
 .intro_bg {
     /* 배경화면 꽉차게 조정. */
     background-image:url("background.jpg");
-    height: 100vh;
+    height: 95vh;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -87,7 +89,7 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 100%;
+    width: 2000px;
     padding: 15px 0;
     text-align: center;
     color: black;
