@@ -1,0 +1,63 @@
+.OUTLINE {
+    stroke-linejoin:round;
+    stroke: #ffffff;
+    stroke-width: 2;
+}
+#CD11 {
+    fill: #d35400;
+}
+#CD26 {
+    fill: #d35400;
+}
+#CD27 {
+    fill: #d35400;
+}
+#CD28 {
+    fill: #d35400;
+}
+#CD29 {
+    fill: #d35400;
+}
+#CD30 {
+    fill: #d35400;
+}
+#CD31 {
+    fill: #d35400;
+}
+#CD36 {
+    fill: #d35400;
+}
+#CD41 {
+    fill: #d35400;
+}
+#CD42 {
+    fill: #d35400;
+}
+#CD43 {
+    fill: #d35400;
+}
+#CD44 {
+    fill: #d35400;
+}
+#CD45 {
+    fill: #d35400;
+}
+#CD46 {
+    fill: #d35400;
+}
+#CD47 {
+    fill: #d35400;
+}
+#CD48 {
+    fill: #d35400;
+}
+#CD50 {
+    fill: #d35400;
+}
+.TEXT {
+    fill: #ffffff;
+    font-size: 24px;
+    text-anchor: middle;
+    /* alignment-baseline: middle; */
+    background-color: red;
+}

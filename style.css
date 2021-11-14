@@ -69,13 +69,8 @@ body {
     height: 500px;
     margin-top:50px;
     margin-left: 150px;
-    border: 1px solid white;
-    background-image:url("korea2.png");
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 70%;
 }
+
 
 .coronastatus {
     margin-left: 200px;
@@ -95,3 +90,4 @@ body {
     color: black;
     background-color:#ffffff;
 }
+
