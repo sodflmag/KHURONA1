@@ -3,61 +3,80 @@
     stroke: #ffffff;
     stroke-width: 2;
 }
-#CD11 {
-    fill: #d35400;
+/* #CD11 {
+    fill: #ffd4b7;
 }
 #CD26 {
-    fill: #d35400;
+    fill: #ffd4b7;
 }
 #CD27 {
-    fill: #d35400;
+    fill: #ffd4b7;
 }
 #CD28 {
-    fill: #d35400;
+    fill: #ffd4b7;
 }
 #CD29 {
-    fill: #d35400;
+    fill: #ffd4b7;
 }
 #CD30 {
-    fill: #d35400;
+    fill: #ffd4b7;
 }
 #CD31 {
-    fill: #d35400;
+    fill: #ffd4b7;
 }
 #CD36 {
-    fill: #d35400;
+    fill: #ffd4b7;
 }
 #CD41 {
-    fill: #d35400;
+    fill: #ffd4b7;
 }
 #CD42 {
-    fill: #d35400;
+    fill: #ffd4b7;
 }
 #CD43 {
-    fill: #d35400;
+    fill: #ffd4b7;
 }
 #CD44 {
-    fill: #d35400;
+    fill: #ffd4b7;
 }
 #CD45 {
-    fill: #d35400;
+    fill: #ffd4b7;
 }
 #CD46 {
-    fill: #d35400;
+    fill: #ffd4b7;
 }
 #CD47 {
-    fill: #d35400;
+    fill: #ffd4b7;
 }
 #CD48 {
-    fill: #d35400;
+    fill: #ffd4b7;
+} */
+
+.CD {
+    fill: #ffd4b7;
 }
-#CD50 {
-    fill: #d35400;
-}
+
 .TEXT {
     fill: #ffffff;
     font-size: 24px;
     text-anchor: middle;
+    user-select: none;
     /* alignment-baseline: middle; */
-    background-color: red;
+}
+.mouseEnter {
+    /* important를 추가함으로써 distancelvl과 클래스보다 우선순위를 높임 */
+    fill: #62ad9b !important;
+}
+
+/* 거리두기 2단계 */
+.distancelvl2 {
+    fill: #fc9f61;
+}
+/* 거리두기 3단계 */
+.distancelvl3 {
+    fill: #ff643d;
+}
+/* 거리두기 4단계 */
+.distancelvl4 {
+    fill: #a12505;
 }
