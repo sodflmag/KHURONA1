@@ -68,7 +68,6 @@ body {
     width: 650px;
     height: 500px;
     margin-top:50px;
-    margin-left: 150px;
 }
 
 
@@ -80,7 +79,7 @@ body {
     border: 1px solid white;
 }
 
-.footer {
+/* .footer {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -90,4 +89,4 @@ body {
     color: black;
     background-color:#ffffff;
 }
-
+ */
