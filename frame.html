@@ -27,8 +27,19 @@
                 </div>
             </div>
             <div class = "main">
+              <div id = "distancing_section">
                 <img src = "distancing_val_image.png" id = "distancing_img">
+                <p id = "distancing_explain"> 
+                  <b>단계 기준</b><br><br>
+                  1 : 인구 10만명당 1명 미만 <br> <br>
+                  2 : 인구 10만명당 1명 이상 <br> <br>
+                  3 : 인구 10만명당 2명 이상 <br> <br>
+                  4 : 인구 10만명당 4명 이상 <br> <br>
+                </p>
+              </div>
+
                 <div class = "coronamap">
+                  <p id = "clock">2021.11.17 00 : 00 기준</p>
                     <svg style='background:transparent;overflow:visible' height="600" width="500" xmlns="http://www.w3.org/2000/svg"
 viewBox= "-125 30 900 900" >
 <defs>
@@ -80,7 +91,8 @@ viewBox= "-125 30 900 900" >
 </g></svg> 
 
                 </div>
-
+                <section> 
+                    <!-- 지역 별 팝업 시스템 -->
                     <div class="background area0">
                         <div class="window">
                           <div class="popup">
@@ -216,7 +228,7 @@ viewBox= "-125 30 900 900" >
                           </div>
                         </div>
                     </div>
-
+                </section>
                  <div class = "coronastatus"> 여기에 API에서 받은 데이터가 들어감 </div>
                 <div class = "hidden_coronastatus"></div>
              </div> 

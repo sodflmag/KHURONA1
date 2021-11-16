@@ -21,8 +21,11 @@ for (let i = 0; i < length; i++) {
 }
 
 const distance_val = [1,2,2,3,1,2,4,2,3,2,4,2,1,3,4,3,2];
-// distance_val은 백엔드로부터 받아와야 함, 지역 별 거리두기 단계 정보
-// mapping 방식은 인덱스 기준. 
+// distance_val은 API로부터 받아오게 됨, length = 16
+
+ // 서울 부산 대구 인천 광주 대전 울산 세종 경기도 강원도 충청북도 충청남도 전라북도 전라남도 경상북도 경상남도 제주도 순 인덱스 부여
+
+  
 
 for (let i = 0; i < length; i++) {
     if(distance_val[i] != 1) {
@@ -46,3 +49,4 @@ for (let i = 0; i < length; i++) {
           document.querySelector(".area" + i).classList.remove("show");
       })
   }
+
