@@ -26,6 +26,8 @@
 
   .popup {
     position: absolute;
+    display: flex;
+    flex-direction: row;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -44,3 +46,32 @@
     transform: translate(-50%, -50%);
     transition: all 0.5s;
   }
+
+  .area-left {
+    width: 50%;
+    height: 100%;
+    border-right: 1px dotted gray;
+  }
+  .area-right {
+    width: 50%;
+    height: 100%;
+  }
+
+  .hidden_close {
+    position: relative;
+    left: 470px;
+    bottom: 30px;
+    outline: none;
+    background-color:transparent;
+    border: 0;
+    font-size: 20px;
+  }
+  
+.hidden_close:after {
+  display:inline-block;
+  content: "\00d7";
+}
+
+.hidden_close:hover {
+  color: white;
+}

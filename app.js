@@ -7,18 +7,18 @@ app.set('view engine', 'ejs');
 const request = require("request");
 const convert = require("xml-js");
 const date = new Date();
-const year = date.getFullYear();
-const month = date.getMonth() + 1 > 10 ? date.getMonth() + 1 : '0' + date.getMonth();
-const day = date.getDate() > 10 ? date.getDate() : '0' + date.getDate(); 
+let year = date.getFullYear();
+let month = date.getMonth() + 1 > 10 ? date.getMonth() + 1 : '0' + date.getMonth();
+let day = date.getDate() > 10 ? date.getDate() : '0' + date.getDate(); 
+let startCreateDt = `${year}${month}${day}`;
+let endCreateDt = `${year}${month}${day}`;
+
 // month, date의 경우 10보다 작아지는 경우 앞에 0을 붙여줘야 정상적인 URL 생성이 가능함.
 const url = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?";
 const key = "680%2FgyPOpacfjvTYIO1H2rHe4F%2FfdZV1jVBWfNkVZt8XL9zsYRp%2BbIO2%2FGwKolSMM6RcViMLiPgq4S%2BQJhROFQ%3D%3D";
-const pageNo = "1";
+const pageNo = "2";
 const numofRows = "10";
-const startCreateDt = `${year}${month}${day}`;
-const endCreateDt = `${year}${month}${day}`;
-const requestURL = `${url}serviceKey=${key}&pageNo=${pageNo}&numoFRows=${numofRows}&startCreateDt=${startCreateDt}&endCreateDt=${endCreateDt}`;
-
+let requestURL = `${url}serviceKey=${key}&pageNo=${pageNo}&numoFRows=${numofRows}&startCreateDt=${startCreateDt}&endCreateDt=${endCreateDt}`;
 
 // 코로나 확진자 수 API 받아오는 구간
 function getData() {
@@ -44,7 +44,8 @@ getData().then(function(data) {
         values.push({'areaName' : areaName, 
             'areaCovidcount' : areaCovidCount,
     })
-    }
+}
+
     resolve(values); // values에는 객체 형태로 지역 별 정보 저장.
     }
     )}).then((result) => {
@@ -77,7 +78,40 @@ getData().then(function(data) {
     })
 
 
+// 크롤링 부분. 지역별 세부적인 확진자 정보를 가져옴.
+const axios = require("axios");
+const cheerio = require("cheerio");
 
-    app.listen(8080, () => {
-        console.log("listening port 8080");
-    });
+function getHTML() {
+    return new Promise(function(resolve, reject) {
+        {
+            resolve(axios.get("http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubun="));
+
+            reject("Crawling failed");
+    }
+})
+}
+
+getHTML().then(html => {
+    let titleList = [];
+    const $ = cheerio.load(html.data);
+    const bodyList = $(".rpsa_detail").children("div");
+    bodyList.each(function(i, elem) {
+        titleList[i] = {
+          title: $(this)
+            .find("div table")
+            .text()
+        };
+      });
+      return titleList;
+      // bodyList를 순환하면서 titleList에 값을 넣고 return 함.
+}).then((titleList)=> console.log(titleList));
+
+
+
+
+app.listen(8080, () => {
+    console.log("listening port 8080");
+});
+    // 정각이 넘어가면 API 데이터가 일정 시간 동안은 넘어오지 않는 문제 발생, 어떻게 처리할 것인지?
+    // 또한 날짜가 넘어갈 때마다 서버를 재시작할 것인지? 새로 바뀐 데이터를 어떻게 반영할까?

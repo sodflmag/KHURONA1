@@ -29,11 +29,11 @@ const distance_val = [];
     const temp_for_path = paths[i];
     let weight = 0;
     const IDInteger = parseInt(temp_for_path.id);
-    if(IDInteger< 30) {
+    if(IDInteger< 50) {
         weight = 1;
-    } else if(IDInteger < 60) {
+    } else if(IDInteger < 100) {
         weight = 2;
-    } else if(IDInteger < 90) {
+    } else if(IDInteger < 200) {
         weight = 3;
     } else {
         weight = 4;
