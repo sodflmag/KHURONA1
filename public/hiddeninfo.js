@@ -1,27 +1,55 @@
- //x라는 XMLHttpRequest 객체 생성.
-// fetch("http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubun=").then(res=> console.log(res));
+window.onload = function() {
+    main();
+}
 
-// function test(){
+function main() {
+    let jsonData = JSON.parse(JSON.stringify(Params));
+    const popups = document.querySelectorAll(".popup .area-left"); // 각 팝업의 area-left에 대해서 
+    const areas = document.getElementsByTagName("path");
 
-//     if(x.readyState == '4'){ //x의 데이터로드가 완료 되었을 때.
-//     console.log('complete road'); //데이터 로드 완료 출력.
+    const length = popups.length; 
+    for (let i = 0; i < length; i++) {
+        // table 형식으로 삽입
+        let table = document.createElement("table");
+        let thead = document.createElement("thead");
+        let thead_tr = document.createElement("tr");
+        let thead_tr2 = document.createElement("tr");
+        let thead_td_1 = document.createElement("td");
+        let thead_td_2 = document.createElement("td");
+        thead_td_1.innerHTML = "일일 확진자 수 : " + areas[i].id;
+        thead_td_1.colSpan = "4";
+        thead_td_2.innerHTML = "누적 확진자 수";
+        thead_td_2.colSpan = "4";
+        thead_tr.appendChild(thead_td_1);
+        thead_tr2.appendChild(thead_td_2);
+        thead.appendChild(thead_tr);
+        thead.appendChild(thead_tr2);
+        let tbody = document.createElement("tbody");
+        let CityData = jsonData['body'][i]['tempArray']; // 각 도시들에 대해서 
+        let tr = document.createElement("tr");
+        let td_1;
+        let td_2;
+        let count = 1;
+         for (let j = 0; j < CityData.length; j++) {
 
-//     let i; //반복문돌리기용 변수 선언
-//     var el = document.createElement('yoso')  //el이라는 엘리먼트 선언.
-//     el.innerHTML = x.responseText; // el 엘리먼트 안에 아까 x가 받아온 respontext삽입.
+                td_1 = document.createElement("td"); // city
+                td_2 = document.createElement("td"); // value
+                td_1.innerHTML = CityData[j]['city'];
+                td_2.innerHTML = CityData[j]['value'];
 
+                tr.appendChild(td_1);
+                tr.appendChild(td_2);
+                if(count % 2 == 0 || j == CityData.length - 1) {
+                tbody.appendChild(tr);
+                tr = document.createElement("tr");
+                }
+                count++;
+        }
+       
+        
+        table.appendChild(thead);
+        table.appendChild(tbody);
+        popups[i].appendChild(table);
+    }
+}
 
-//     for(i=0;i<el.querySelectorAll('.card-title').length;i++) {
-//     //card-title클래스가 발견된 개수만큼 반복
-
-//     document.writeln(el.querySelectorAll('.card-title')[i].innerText+'<br>');
-//     // 화면에 card-title클래스에 있는 Text를 출력후 줄바꿈.
-//     }
-//     clearInterval(timer); //타이머 초기화
-// }
-// else{
-//     console.log('loading'); //데이터 로드 미완료시 로딩표시
-
-// }
-// }
-// let timer = setInterval(test,100); //0.1초마다 test함수 실행.

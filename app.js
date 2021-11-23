@@ -91,8 +91,8 @@ getData().then(function(data) {
       // titleList에는 19~ 35번째 인덱스에만 필요로 하는 정보가 있음.
       const getJson = ParseAndMakeJson(titleList); // JSON 형식으로 크롤링 정보를 저장했음.
       const StringJson = JSON.stringify(getJson);
-      fs.writeFileSync('crawling-info.json', StringJson);
-      
+      fs.writeFileSync('public/crawling-info.json', "Params = " + StringJson);
+
 
        // 1번부터 서울, 17번 제주까지.
  app.get('/', (req, res) => {
