@@ -33,7 +33,6 @@
     transform: translate(-50%, -50%);
     background-color: #ffffff;
     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
-
     width: 1400px;
     height: 700px;
 
@@ -55,12 +54,17 @@
   .area-right {
     width: 60%;
     height: 100%;
+    overflow:scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
-
+  .area-right::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
   .hidden_close {
-    position: relative;
-    left: 800px;
-    bottom: 30px;
+    position: absolute;
+    left: 1370px;
+    bottom: 700px;
     outline: none;
     background-color:transparent;
     border: 0;
@@ -112,4 +116,17 @@ table tr td:nth-child(2), table tr td:nth-child(4) {
 table thead tr:nth-child(1) {
   /* 일일 확진자 수 표시하는 부분 */
   font-size: 16px;
+}
+
+/* -----------------------------------여행 관련-------------------------------- */
+.area-right div {
+    width: 100%;
+    height: 50%;
+    border-top: 2px dotted gray;
+    margin-top: 15px;
+}
+
+.travel-blocks {
+  /* 각각의 여행정보들, 블록 단위 */
+  height: 80px;
 }
