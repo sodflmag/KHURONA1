@@ -22,11 +22,21 @@ const url = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19Si
 const key = "680%2FgyPOpacfjvTYIO1H2rHe4F%2FfdZV1jVBWfNkVZt8XL9zsYRp%2BbIO2%2FGwKolSMM6RcViMLiPgq4S%2BQJhROFQ%3D%3D";
 const pageNo = "2";
 const numofRows = "10";
+
+if(0<= date.getHours() && date.getHours() <= 9) { 
+    // 00시 ~ 09시까지는 API가 갱신되지 않으므로 예외처리
+    year = date.getFullYear();
+    date.setDate(date.getDate() - 1); // 하루 전날
+    month = date.getMonth() + 1 > 10 ? date.getMonth() + 1 : '0' + date.getMonth();
+    day = date.getDate() > 10 ? date.getDate() : '0' + date.getDate(); 
+    startCreateDt = `${year}${month}${day}`;
+    endCreateDt = `${year}${month}${day}`;
+}
+
+
 let requestURL = `${url}serviceKey=${key}&pageNo=${pageNo}&numoFRows=${numofRows}&startCreateDt=${startCreateDt}&endCreateDt=${endCreateDt}`;
 
 // 선언부분 종료 -------------------------------------------------------------------
-
-
 
 
 

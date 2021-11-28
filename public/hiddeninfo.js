@@ -6,6 +6,7 @@ function main() {
     let jsonData = JSON.parse(JSON.stringify(Params));
     const popups = document.querySelectorAll(".popup .area-left"); // 각 팝업의 area-left에 대해서 
     const areas = document.getElementsByTagName("path");
+    const texts = document.querySelectorAll(".TEXT");
 
     const length = popups.length; 
     for (let i = 0; i < length; i++) {
@@ -14,13 +15,13 @@ function main() {
         let thead = document.createElement("thead");
         let thead_tr = document.createElement("tr");
         let thead_tr2 = document.createElement("tr");
-        let thead_td_1 = document.createElement("td");
+        // let thead_td_1 = document.createElement("td");
         let thead_td_2 = document.createElement("td");
-        thead_td_1.innerHTML = "일일 확진자 수 : " + areas[i].id;
-        thead_td_1.colSpan = "4";
+        // thead_td_1.innerHTML = "일일 확진자 수 : " + areas[i].id;
+        // thead_td_1.colSpan = "4";
         thead_td_2.innerHTML = "누적 확진자 수";
         thead_td_2.colSpan = "4";
-        thead_tr.appendChild(thead_td_1);
+        // thead_tr.appendChild(thead_td_1);
         thead_tr2.appendChild(thead_td_2);
         thead.appendChild(thead_tr);
         thead.appendChild(thead_tr2);
@@ -46,9 +47,15 @@ function main() {
                 count++;
         }
        
-        
+        const span1 = document.createElement("span");
+        const span2 = document.createElement("span");
+        span1.innerHTML = texts[i].innerHTML + " 일일 확진자수";
+        span2.innerHTML = areas[i].id + " 명";
+
         table.appendChild(thead);
         table.appendChild(tbody);
+        popups[i].appendChild(span1);
+        popups[i].appendChild(span2);
         popups[i].appendChild(table);
     }
 }
