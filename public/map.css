@@ -1,0 +1,118 @@
+.OUTLINE {
+    stroke-linejoin:round;
+    stroke: #ffffff;
+    stroke-width: 2;
+}
+/* #CD11 {
+    fill: #ffd4b7;
+}
+#CD26 {
+    fill: #ffd4b7;
+}
+#CD27 {
+    fill: #ffd4b7;
+}
+#CD28 {
+    fill: #ffd4b7;
+}
+#CD29 {
+    fill: #ffd4b7;
+}
+#CD30 {
+    fill: #ffd4b7;
+}
+#CD31 {
+    fill: #ffd4b7;
+}
+#CD36 {
+    fill: #ffd4b7;
+}
+#CD41 {
+    fill: #ffd4b7;
+}
+#CD42 {
+    fill: #ffd4b7;
+}
+#CD43 {
+    fill: #ffd4b7;
+}
+#CD44 {
+    fill: #ffd4b7;
+}
+#CD45 {
+    fill: #ffd4b7;
+}
+#CD46 {
+    fill: #ffd4b7;
+}
+#CD47 {
+    fill: #ffd4b7;
+}
+#CD48 {
+    fill: #ffd4b7;
+} */
+
+.CD {
+    fill: #ffd4b7;
+}
+
+.TEXT {
+    fill: #ffffff;
+    font-size: 27px;
+    text-anchor: middle;
+    user-select: none;
+    /* alignment-baseline: middle; */
+}
+.mouseEnter {
+    /* important를 추가함으로써 distancelvl과 클래스보다 우선순위를 높임 */
+    fill: #62ad9b !important;
+}
+
+/* 거리두기 2단계 */
+.distancelvl2 {
+    fill: #fc9f61;
+}
+/* 거리두기 3단계 */
+.distancelvl3 {
+    fill: #ff643d;
+}
+/* 거리두기 4단계 */
+.distancelvl4 {
+    fill: #a12505;
+}
+
+#distancing_img {
+    width: 169px; 
+    height:50px;
+    margin-left: 50px;
+    margin-top: 100px;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+#distancing_section {
+    display:flex;
+    flex-direction: column;
+}
+
+#distancing_explain {
+    color: black;
+    user-select: none;
+    text-align: center;
+    margin-left: 42px;
+    margin-top: 30px;
+    padding-top: 10px;
+    font-size: 15px;
+    border:1px solid white;
+    background-color: white;
+    border-radius: 15px;
+
+}
+
+ #clock {
+    padding-left:130px;
+    color:white;
+    letter-spacing: 1px;
+    font-size: 16px;
+    user-select: none;
+    text-shadow: 1px 1px 0px black;
+}
