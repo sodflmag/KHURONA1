@@ -8,9 +8,9 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const request = require("request");
 const convert = require("xml-js");
-const fs = require('fs');
-
+const fs = require('fs');   
 const date = new Date();
+
 let year = date.getFullYear();
 let month = date.getMonth() + 1 > 10 ? date.getMonth() + 1 : '0' + date.getMonth();
 let day = date.getDate() > 10 ? date.getDate() : '0' + date.getDate(); 
