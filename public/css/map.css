@@ -85,16 +85,18 @@
     width: 169px; 
     height:50px;
     margin-left: 50px;
-    margin-top: 100px;
+    margin-top: 0%;
     image-rendering: -webkit-optimize-contrast;
 }
 
 #distancing_section {
     display:flex;
     flex-direction: column;
+    margin-right: 10%;
 }
 
 #distancing_explain {
+    width: 200px;
     color: black;
     user-select: none;
     text-align: center;
@@ -103,16 +105,18 @@
     padding-top: 10px;
     font-size: 15px;
     border:1px solid white;
-    background-color: white;
+    background-color: rgba(255, 236, 244, 0.637);
     border-radius: 15px;
 
 }
 
  #clock {
-    padding-left:130px;
-    color:white;
-    letter-spacing: 1px;
+     color: black;
+    /* color:black; */
+    /* letter-spacing: 2px; */
     font-size: 16px;
     user-select: none;
-    text-shadow: 1px 1px 0px black;
+    padding-left: 20%;
+    padding-top: 20%;
+
 }

@@ -106,7 +106,7 @@ getData().then(function(data) {
 
        // 1번부터 서울, 17번 제주까지.
  app.get('/', (req, res) => {
-    res.render('view.ejs', {distancingval1: result_arr[1].areaCovidcount,
+    res.render('CSS_body_carousel_rev2.ejs', {distancingval1: result_arr[1].areaCovidcount,
                             distancingval2: result_arr[2].areaCovidcount,
                             distancingval3: result_arr[3].areaCovidcount,
                             distancingval4: result_arr[4].areaCovidcount,

@@ -1,5 +1,4 @@
-* {
-    /* default 값 설정, 속성 지우기 */
+/* * {
     font-family: 'Noto Sans KR', sans-serif;
     list-style: none;
     text-decoration: none;
@@ -7,19 +6,14 @@
     margin: 0px;
     padding: 0px;
     color: #000;
-}
-body {
-    width:2000px;
-}
-.intro_bg {
-    /* 배경화면 꽉차게 조정. */
-    background-image:url("img/background.jpg");
+} */
+/* .intro_bg {
     height: 95vh;
     background-repeat: no-repeat;
     background-size: cover;
-}
+} */
 
-.header {
+/* .header {
     display: flex;
     height: 80px;
     background-color:#ffffff;
@@ -56,11 +50,15 @@ body {
     outline: none;
     float: right;
     color: #ffffff;
-}
+} */
 
 
 .main {
-    position: absolute;
+    /* width: 800px;
+    height: 720px; */
+    width: 100%;
+    height: 720px;
+    margin-right:0px;
     display: flex;
 }
 
@@ -71,13 +69,13 @@ body {
 }
 
 
-.coronastatus {
+/* .coronastatus {
     margin-left: 200px;
     margin-top:50px;
     width: 500px;
     height: 500px;
     border: 1px solid white;
-}
+} */
 
 /* .footer {
     position: absolute;
@@ -91,30 +89,3 @@ body {
 }
  */
  
-#distancing_section {
-    display:flex;
-    flex-direction: column;
-}
-
-#distancing_explain {
-    color: black;
-    user-select: none;
-    text-align: center;
-    margin-left: 42px;
-    margin-top: 30px;
-    padding-top: 10px;
-    font-size: 15px;
-    border:1px solid white;
-    background-color: white;
-    border-radius: 15px;
-
-}
-
- #clock {
-    padding-left:130px;
-    color:white;
-    letter-spacing: 1px;
-    font-size: 16px;
-    user-select: none;
-    text-shadow: 1px 1px 0px black;
-}
