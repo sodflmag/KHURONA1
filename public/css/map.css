@@ -1,56 +1,9 @@
 .OUTLINE {
     stroke-linejoin:round;
-    stroke: #ffffff;
+    stroke: #e2f9ff;
     stroke-width: 2;
 }
-/* #CD11 {
-    fill: #ffd4b7;
-}
-#CD26 {
-    fill: #ffd4b7;
-}
-#CD27 {
-    fill: #ffd4b7;
-}
-#CD28 {
-    fill: #ffd4b7;
-}
-#CD29 {
-    fill: #ffd4b7;
-}
-#CD30 {
-    fill: #ffd4b7;
-}
-#CD31 {
-    fill: #ffd4b7;
-}
-#CD36 {
-    fill: #ffd4b7;
-}
-#CD41 {
-    fill: #ffd4b7;
-}
-#CD42 {
-    fill: #ffd4b7;
-}
-#CD43 {
-    fill: #ffd4b7;
-}
-#CD44 {
-    fill: #ffd4b7;
-}
-#CD45 {
-    fill: #ffd4b7;
-}
-#CD46 {
-    fill: #ffd4b7;
-}
-#CD47 {
-    fill: #ffd4b7;
-}
-#CD48 {
-    fill: #ffd4b7;
-} */
+
 
 .CD {
     fill: #ffd4b7;
@@ -110,12 +63,18 @@
 
 }
 
+#text_explain {
+    font-size: 15px;
+    font-weight: bold;
+    float:right;
+    margin-bottom: 0%;
+}
  #clock {
-     color: black;
-    /* color:black; */
+    text-decoration: none;
+    color:black;
     /* letter-spacing: 2px; */
-    font-size: 16px;
-    user-select: none;
+    font-size: 18px;
+    font-weight: bold;
     padding-left: 20%;
     padding-top: 20%;
 

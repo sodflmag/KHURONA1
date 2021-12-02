@@ -49,6 +49,7 @@
 }
 
 .area-left {
+  overflow:scroll;
   width: 40%;
   height: 100%;
   border-right: 1px dotted gray;
@@ -89,7 +90,7 @@ color: white;
 }
 
 
-table {
+.area-left > table {
 width: 100%;
 border-collapse: separate;
 border-spacing: 0;
@@ -99,7 +100,7 @@ border-left: 1px solid #ccc;
 text-align: center;
 font-size: 15px;
 }
-table tr td:nth-child(1), table tr td:nth-child(3) {
+.area-left > table tr td:nth-child(1), table tr td:nth-child(3) {
 /* value */
 font-weight: bold;
 vertical-align: top;
@@ -110,7 +111,7 @@ border-left: 1px solid #fff;
 padding: 2px;
 width: 120px;
 }
-table tr td:nth-child(2), table tr td:nth-child(4) {
+.area-left > table tr td:nth-child(2), table tr td:nth-child(4) {
 /* city */
 vertical-align: top;
 border-right: 1px solid #ccc;
