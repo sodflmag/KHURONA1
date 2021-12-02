@@ -16,6 +16,7 @@
   opacity: 1;
   z-index: 1000;
   transition: all 0.5s;
+  min-width: 1050px;
 }
 
 .window {
@@ -33,9 +34,10 @@
   transform: translate(-50%, -50%);
   background-color: #ffffff;
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
-  width: 1400px;
-  height: 700px;
-
+  /* width: 1400px;
+  height: 700px; */
+  width: 80%;
+  height: 80%;
   /* 초기에 약간 아래에 배치 */
   transform: translate(-50%, -40%);
   border-radius: 15px;
@@ -52,6 +54,7 @@
   border-right: 1px dotted gray;
 }
 .area-right {
+  
   width: 60%;
   height: 100%;
   padding-right: 30px;
@@ -66,8 +69,10 @@
 
 .hidden_close {
   position: absolute;
-  left: 1370px;
-  bottom: 700px;
+  /* left: 1370px;
+  bottom: 700px; */
+  left: 97%;
+  bottom: 100%;
   outline: none;
   background-color:transparent;
   border: 0;
@@ -144,6 +149,7 @@ float:left;
 }
 
 
+
 /* IE 10, 11의 네이티브 화살표 숨기기 */
 select::-ms-expand {
 display: none;
@@ -153,17 +159,17 @@ select {
 -webkit-appearance: none;  /* 네이티브 외형 감추기 */
 -moz-appearance: none;
 appearance: none;
-width: 200px; /* 원하는 너비설정 */
+width: 25%; /* 원하는 너비설정 */
 padding: .5em .3em; /* 여백으로 높이 설정 */
 font-family: inherit;  /* 폰트 상속 */
 background: url('../img/select.png') no-repeat 10% 10%; /* 네이티브 화살표를 커스텀 화살표로 대체 */
 background-size: 10% 35%;
-background-position-x: 170px;
-background-position-y: 13px;
+background-position-x: 95%;
+background-position-y: 50%;
 border: 1px solid #999;
 border-radius: 0px; /* iOS 둥근모서리 제거 */
 image-rendering: -webkit-optimize-contrast;
-margin-left: 445px;
+margin-left: 5%;
 }
 
 .reget-button {
@@ -204,7 +210,7 @@ display: block;
 }
 
 .travel-blocks img {
-width: 770px;
+width: 99%;
 height: auto;
 }
 
