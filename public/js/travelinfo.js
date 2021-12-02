@@ -3,8 +3,7 @@ function getAPIInfo(AREACODE, CONTENT_TYPE_ID) {
     const page_no = 1;
     const mobile_os = "ETC"; // 컴퓨터 웹페이지이므로
     const mobile_app = "TravelInfo"; // 서비스명
-    // const service_key = "680%2FgyPOpacfjvTYIO1H2rHe4F%2FfdZV1jVBWfNkVZt8XL9zsYRp%2BbIO2%2FGwKolSMM6RcViMLiPgq4S%2BQJhROFQ%3D%3D";
-    const service_key = "AphC66GHAr%2Fsigd0y6R2i5kd0bw6DjE1I86L67QSSX16i4uzVjGh%2FRUINHg54kJIL9ADbF4lS3tCI4MxiRvxVA%3D%3D";
+    const service_key = "680%2FgyPOpacfjvTYIO1H2rHe4F%2FfdZV1jVBWfNkVZt8XL9zsYRp%2BbIO2%2FGwKolSMM6RcViMLiPgq4S%2BQJhROFQ%3D%3D";
     const url = `http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaBasedList?numOfRows=${num_of_rows}&pageNo=${page_no}&ServiceKey=${service_key}&contentTypeId=${CONTENT_TYPE_ID}&areaCode=${AREACODE}&MobileOS=${mobile_os}&MobileApp=${mobile_app}&listYN=Y&_type=json`;
     let jsonFile;
     return new Promise(function(resolve, reject) {
@@ -28,11 +27,19 @@ function JsonToVisibleInfo(jsonfile) {
     // 모든 요소를 포함하는 div
     // random으로 8개 뽑아옴
 
+    let id_arr = []; // 중복 요소가 들어가는지 체크하는 배열, 고유한 id 값이 들어감
+
     for (let i = 0; i < 8; i++) {
         const randomnum = Math.floor(Math.random() * length);
         // 0 ~ length - 1 사이의 난수 생성
         // 랜덤하게 8개 요소를 뽑아온다.
         let it = jsonfile["response"]["body"]['items']['item'][randomnum];
+        while (id_arr.includes(it['contentid'])) {
+            // 중복 요소를 가져올 수 있으니 중복 요소가 아닐때까지 다시 가져옴 
+            const randomnum = Math.floor(Math.random() * length);
+            it = jsonfile["response"]["body"]['items']['item'][randomnum];
+        }
+        id_arr.push(it['contentid']);
         const div = document.createElement("div");
         div.className = "travel-blocks";
         // div 안에 span, img가 포함됨

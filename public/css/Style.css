@@ -60,6 +60,9 @@
     height: 720px;
     margin-right:0px;
     display: flex;
+    /* background-image: url('../img/plane.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%; */
 }
 
 .coronamap {
