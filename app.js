@@ -19,7 +19,7 @@ const startCreateDt = `${year}${month}${day}`;
 const endCreateDt = `${year}${month}${day}`;
 const requestURL = `${url}serviceKey=${key}&pageNo=${pageNo}&numoFRows=${numofRows}&startCreateDt=${startCreateDt}&endCreateDt=${endCreateDt}`;
 
-
+console.log(requestURL)
 // 코로나 확진자 수 API 받아오는 구간
 function getData() {
     return new Promise(function(resolve, reject) {
@@ -41,9 +41,22 @@ getData().then(function(data) {
     for (x of obj["response"]["body"]["items"]["item"]) {
         const areaName = x['gubun']['_text'];
         const areaCovidCount = x['localOccCnt']['_text'];
+        const deathCnt = x['deathCnt']['_text'];
+        const defCnt = x['defCnt']['_text'];
+        const incDec = x['incDec']['_text'];
+        const overFlowCnt = x['overFlowCnt']['_text'];
+        const isolClearCnt = x['isolClearCnt']['_text'];
         values.push({'areaName' : areaName, 
             'areaCovidcount' : areaCovidCount,
+            'deathCnt' : deathCnt,
+            'defCnt' : defCnt,
+            'incDec' : incDec,
+            'overFlowCnt' : overFlowCnt,
+            'isolClearCnt' : isolClearCnt
+            
     })
+    // const deathCnt = obj["response"]["body"]["items"][0]["deathCnt"]["_text"];
+    // values.push({'deathCnt' : deathCnt});
     }
     resolve(values); // values에는 객체 형태로 지역 별 정보 저장.
     }
@@ -51,6 +64,7 @@ getData().then(function(data) {
         result = result.reverse();
         // console.log(result);
         // 1번부터 서울, 17번 제주까지.
+        // 각종 수치 표 정보
         app.get('/', (req, res) => {
             res.render('view.ejs', {distancingval1: result[1].areaCovidcount,
                                     distancingval2: result[2].areaCovidcount,
@@ -69,8 +83,13 @@ getData().then(function(data) {
                                     distancingval15: result[15].areaCovidcount,
                                     distancingval16: result[16].areaCovidcount,
                                     distancingval17: result[17].areaCovidcount,
-                                    date : `${year}.${month}.${day}`
-                                    
+                                    date : `${year}.${month}.${day}`,
+                                    deathCnt: result[0].deathCnt,
+                                    defCnt: result[0].defCnt,
+                                    incDec: result[0].incDec,
+                                    overFlowCnt: result[0].overFlowCnt,
+                                    isolClearCnt: result[0].isolClearCnt,
+                                    defToday: Number(result[0].areaCovidcount) + Number(result[0].overFlowCnt)
         });
         });
         

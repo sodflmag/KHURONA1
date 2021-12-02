@@ -230,6 +230,26 @@ viewBox= "-125 30 900 900" >
                     </div>
                 </section>
                  <div class = "coronastatus"> 
+                   <!--각종 수치 정보 표-->
+                  <table border="1">
+                    <th>사망자</th>
+                    <th>증가수</th>
+                    <th>총 확진자</th>
+                    <th>해외유입</th>
+                    <th>격리해제</th>
+                    <th>금일 확진자</th>
+                    <tr>
+                        <td><%= deathCnt %></td>
+
+                        <td><%= incDec%></td>
+                        <td><%= defCnt %></td>
+                        <td><%= overFlowCnt %></td>
+                        <td><%= isolClearCnt %></td>
+                        <td><%= defToday %></td>
+                    </tr>
+                      </table>
+                      <br>
+                      <!--지역 별 확진자 표-->
                   <table border="1" width="200px">
                     <th> 지역</td>
                     <th> 신규확진자</td>
