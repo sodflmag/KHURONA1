@@ -42,6 +42,7 @@ let requestURL = `${url}serviceKey=${key}&pageNo=${pageNo}&numoFRows=${numofRows
 
 
 
+console.log(requestURL)
 // 코로나 확진자 수 API 받아오는 구간
 function getData() {
     return new Promise(function(resolve, reject) {
@@ -68,24 +69,50 @@ getData().then(function(data) {
         const areaCovidCount = x['localOccCnt']['_text'];
         result_arr.push({'areaName' : areaName, 
             'areaCovidcount' : areaCovidCount,
+            'deathCnt' : deathCnt,
+            'defCnt' : defCnt,
+            'incDec' : incDec,
+            'overFlowCnt' : overFlowCnt,
+            'isolClearCnt' : isolClearCnt
+            
     })
-}
-
-    resolve(result_arr); // result_arr 객체 형태로 지역 별 정보 저장.
-    reject(new Error("failed"));
+    // const deathCnt = obj["response"]["body"]["items"][0]["deathCnt"]["_text"];
+    // values.push({'deathCnt' : deathCnt});
     }
 
     )}).then((result) => {
         result = result.reverse();
-        result_arr = result;
-
-
-        return new Promise(function(resolve, reject) {
-            {
-                resolve(axios.get("http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubun="));
-    
-                reject("Crawling failed");
-        }
+        // console.log(result);
+        // 1번부터 서울, 17번 제주까지.
+        // 각종 수치 표 정보
+        app.get('/', (req, res) => {
+            res.render('view.ejs', {distancingval1: result[1].areaCovidcount,
+                                    distancingval2: result[2].areaCovidcount,
+                                    distancingval3: result[3].areaCovidcount,
+                                    distancingval4: result[4].areaCovidcount,
+                                    distancingval5: result[5].areaCovidcount,
+                                    distancingval6: result[6].areaCovidcount,
+                                    distancingval7: result[7].areaCovidcount,
+                                    distancingval8: result[8].areaCovidcount,
+                                    distancingval9: result[9].areaCovidcount,
+                                    distancingval10: result[10].areaCovidcount,
+                                    distancingval11: result[11].areaCovidcount,
+                                    distancingval12: result[12].areaCovidcount,
+                                    distancingval13: result[13].areaCovidcount,
+                                    distancingval14: result[14].areaCovidcount,
+                                    distancingval15: result[15].areaCovidcount,
+                                    distancingval16: result[16].areaCovidcount,
+                                    distancingval17: result[17].areaCovidcount,
+                                    date : `${year}.${month}.${day}`,
+                                    deathCnt: result[0].deathCnt,
+                                    defCnt: result[0].defCnt,
+                                    incDec: result[0].incDec,
+                                    overFlowCnt: result[0].overFlowCnt,
+                                    isolClearCnt: result[0].isolClearCnt,
+                                    defToday: Number(result[0].areaCovidcount) + Number(result[0].overFlowCnt)
+        });
+        });
+        
     })
     }).then(html => {
     const $ = cheerio.load(html.data);

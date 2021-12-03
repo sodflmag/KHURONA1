@@ -93,3 +93,93 @@
 }
  */
  
+<<<<<<< HEAD:public/css/Style.css
+=======
+#distancing_section {
+    display:flex;
+    flex-direction: column;
+}
+
+#distancing_explain {
+    color: black;
+    user-select: none;
+    text-align: center;
+    margin-left: 42px;
+    margin-top: 30px;
+    padding-top: 10px;
+    font-size: 15px;
+    border:1px solid white;
+    background-color: white;
+    border-radius: 15px;
+
+}
+
+ #clock {
+    padding-left:130px;
+    color:white;
+    letter-spacing: 1px;
+    font-size: 16px;
+    user-select: none;
+    text-shadow: 1px 1px 0px black;
+}
+
+/* 표 중앙정렬 */
+td{
+    text-align: center;
+}
+
+/* 롤링 배너 스타일 */
+.rolling_box{
+    width: 700px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid #848484;
+    margin-left: 200px;
+    margin-top: 200px;
+}
+
+.rolling_box ul {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.rolling_box ul li {
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+    position:absolute;
+    transition: top .75s;
+    top: 100%;
+    z-index: 1;
+    background-color: #ffffff;
+}
+
+.card_sliding{
+    top: 0 !important;
+    z-index: 100 !important;
+} 
+
+.card_sliding_after{
+    top: -100% !important;
+    z-index: 10 !important;
+}
+
+.rolling_box ul li p {
+    font-size: 20px;
+    line-height: 40px;
+    font-weight: bold;
+}
+
+.before_slide {
+    transform: translateY(100%);
+}
+
+.after_slide {
+    transform: translateY(0);
+}
+/* --------------------- 롤링배너 */
+
+
+>>>>>>> feature/info_right:public/css/style.css
