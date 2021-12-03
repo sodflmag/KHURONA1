@@ -17,7 +17,7 @@ const pageNo = "1";
 const numofRows = "10";
 const startCreateDt = `${year}${month}${day}`;
 const endCreateDt = `${year}${month}${day}`;
-const requestURL = `${url}serviceKey=${key}&pageNo=${pageNo}&numoFRows=${numofRows}&startCreateDt=${startCreateDt}&endCreateDt=${endCreateDt}`;
+const requestURL = `${url}serviceKey=${key}&pageNo=${pageNo}&numoFRows=${numofRows}&startCreateDt=20211202&endCreateDt=20211202`;
 
 console.log(requestURL)
 // 코로나 확진자 수 API 받아오는 구간

@@ -54,22 +54,22 @@ getData().then(function(data1) {
         // console.log(result);
         console.log(result[0])
 
-        var rollingData = {                              
-            headline1: result[0].headline,
-            headline2: result[1].headline,
-            headline3: result[2].headline,
-            headline4: result[3].headline,
-            headline5: result[4].headline,
-            headline6: result[5].headline,
-            headline7: result[6].headline,
-            headline8: result[7].headline,
-            headline9: result[8].headline,
-            headline10: result[9].headline}
+        var rollingData = [                         
+            result[0].headline,
+            result[1].headline,
+            result[2].headline,
+            result[3].headline,
+            result[4].headline,
+            result[5].headline,
+            result[6].headline,
+            result[7].headline,
+            result[8].headline,
+            result[9].headline]
         
         // headline_info.json 
         var jsonData = JSON.stringify(rollingData);
 
-        fs.writeFile("./public/headline_info.json", jsonData, function(err) {
+        fs.writeFile("./public/headline_info.json", 'rollingData = ' + jsonData, function(err) {
             if (err) {
                 console.log(err);
             }
