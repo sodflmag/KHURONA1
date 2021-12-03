@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
     <title>KHURONA</title>
     <div class="intro_bg">
       
@@ -59,13 +60,14 @@ head{
 
 body {
     position: relative;
-    margin: 0 0 1 1;
-    padding: 0rem 0 0 6.75rem;
+    margin: 4rem 10px 10px 10px;
+    padding: 0 0 0 6rem;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     transition: .5s;
     background-repeat:repeat;
     background-color:#BCDAFD;
+    overflow-x: hidden  ;
 }
 
 h1 {
@@ -295,21 +297,21 @@ div.anchor {
                     </a> -->
                    
                   
-                  <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
-                      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                    </div>
-                  </div>
+                    
 
-                  <a href="#" class="nav__link">
+                  <!-- <a href="#" class="nav__link">
                       <ion-icon name="reorder-four-outline" class="nav__icon"></ion-icon>
                       <span class="nav_name">기타정보</span>
-                  </a>
+                  </a> -->
+              
+
+
               </div>
               <a href="html/search_button.html" class="nav__link">
                   <ion-icon name="search-outline" class="nav__icon"></ion-icon>
                   <span class="nav_name">선별진료소 검색</span>
               </a>
+
           </div>
       </nav>
   </div>
@@ -985,6 +987,22 @@ viewBox= "-125 30 900 900" >
         <div class="card shadow mb-4">
            <div class="card text-center">
           <div class="card-header">
+            <h6 class="m-0 fw-bold text-danger"style="text-align:left">해외관련 뉴스 헤드라인</h6>
+          </div>
+          <div class="card-body">
+           </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            
+    <div class="row">
+      <div class="anchor" id="flightinfo"></div>
+      <div class="col-xl-4 col-lg-12 status-now">
+        <div class="card shadow mb-4">
+           <div class="card text-center">
+          <div class="card-header">
         
             <ul class="nav nav-pills" role="tablist" style="flex-direction: row; justify-content:left">
               <li class="nav-item">
@@ -1000,13 +1018,13 @@ viewBox= "-125 30 900 900" >
               </li>
             </ul>
           </div>
-            <div class="card-body" >
+            <div class="card-body" style="overflow: scroll; overflow-x: hidden; height:30rem;">
               <div class="tab-content">
                 
                 <div id="America" class="container tab-pane active" style="background-color: white;"><br>
                   <h5 class="card-title">미국 항공정보</h5>
-                  <p>항공 정보</p>
-                  <img src="img/flight.PNG">
+                  <p style="line-height: 1.5;"><span style="font-size: 12pt;">○ 영국 정부는 2021.01.15.(금) 총리 브리핑을 통해 코로나19 변이바이러스의 세계적 확산에 따라 2021.1.18.(월) 04:00부터 기존 코로나19 저위험국가 입국자 대상 자가격리 면제제도(Travel Corridors)를 중단하고 대한민국을 포함한 모든 해외입국자를 대상으로 10일간 자가격리 의무를 부여할 예정입니다.</span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;">○ 같은 일시부터 영국 입국 시 코로나19 음성확인서 제출 의무화(Passenger Locator Form도 별도로 제출 필요)도 함께 시행되오니 영국에 입국할 계획이 있으신 우리 국민께서는 각별히 유념하여 주시기 바랍니다.</span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;">○ 영국 내 자가격리와 관련된 보다 자세한 내용은 아래의 영국정부 홈페이지를 참고해 주시기 바랍니다.</span></p><p style="line-height: 1.5; margin-left: 40px; margin-right: 40px;"><span style="font-size: 12pt;">※ Coronavirus (COVID-19): how to self-isolate when you travel to England</span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;">○ 기타 도움이 필요하시거나 긴급 상황 발생 시 아래 연락처로 연락해 주시기 바랍니다.</span></p><p style="line-height: 1.5; margin-left: 30px; margin-right: 30px;"><span style="font-size: 12pt;">☞ 주영국대한민국대사관<br>&#038;nbsp; &#038;nbsp;- 대표번호(근무시간 중) : +44-20-7227-5500<br>&#038;nbsp; &#038;nbsp;- 긴급연락처(사건사고 등 긴급상황 발생 시, 24시간) : +44-78-7650-6895<br>☞ 영사콜센터(서울, 24시간) : +82-2-3210-0404 / 카카오톡 '외교부 영사콜센터' 친구추가</span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></p>
+
                 </div>
                 <div id="Japan" class="container tab-pane fade" style="background-color: white;"><br>
                   <h5 class="card-title">일본 항공정보</h5>
@@ -1021,14 +1039,151 @@ viewBox= "-125 30 900 900" >
         </div>
       </div>
     </div>
+    <div class="col">
+    <div class="col-xl-12 col-lg-12 status-now">
+      <div class="card shadow mb-4 ">
+         <div class="card text-center">
+        <div class="card-header"style="text-align:left">
+          <h6 class="m-0 fw-bold text-danger">백신 접종율</h6>
+          </div>
+          <div class="card-body">
+            <div>
+              <!-- <canvas id="pieChart" style="max-width: 300px;margin: 0 auto;"></canvas>
+              <div style="margin-left: 3rem;margin-right: 3rem;">
+              <canvas id="pieChart_1" style="max-width: 200px;float: left;"></canvas>
+              <canvas id="pieChart_2" style="max-width: 200px;float: left;"></canvas> -->
+              <div class="small fw-bold" style="text-align: left;">
+              1차 접종 현황
+              </div>
+              <div class="small fw-bold" style="text-align: right;">
+                
+                <span class="float-right mb-2">(접종완료 </span><span class="text-info">1412312명</span> ,미접종 
+                <span class="text-danger">1241명</span>)</span>
+                
+              </div>
+              <div class="progress mb-4" style="margin-top: 1%;">
+                <div class="progress-bar bg-info" role="progressbar" aria-valuenow="81.9" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="bottom" title="" style="width: 82.9%;" data-original-title="격리자 1,421명">82.9%</div>
+                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="18.1" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="bottom" title="" style="width: 17.1%;" data-original-title="사망자 438명">17.1%</div>
+              </div>
+              <div class="small fw-bold" style="text-align: left;">
+                2차 접종 현황
+                </div>
+                <div class="small fw-bold" style="text-align: right;">
+                  
+                  <span class="float-right mb-2">(접종완료 </span><span class="text-info">1412312명</span> ,미접종 
+                  <span class="text-danger">1241명</span>)</span>
+                  
+                </div>
+                <div class="progress mb-4" style="margin-top: 1%;">
+                  <div class="progress-bar bg-info" role="progressbar" aria-valuenow="81.9" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="bottom" title="" style="width: 80.1%;" >80.1%</div>
+                  <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="18.1" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="bottom" title="" style="width: 19.9%;" >19.9%</div>
+                </div>
+                <div class="small fw-bold" style="text-align: left;">
+                  부스터샷 접종 현황
+                  </div>
+                  <div class="small fw-bold" style="text-align: right;">
+                    
+                    <span class="float-right mb-2">(접종완료 </span><span class="text-info">1412312명</span> ,미접종 
+                    <span class="text-danger">1241명</span>)</span>
+                    
+                  </div>
+                  <div class="progress mb-4" style="margin-top: 1%;">
+                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="81.9" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="bottom" title="" style="width: 11.6%;" >11.6%</div>
+                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="18.1" aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" data-placement="bottom" title="" style="width: 88.4%;" >88.4%</div>
+                  </div>
+      
+        </div>
+        
+          </div>
+          </div>
+          </div>
     </div>
+    <div class="col-xl-12 col-lg-12 status-now">
+      <div class="card shadow mb-4">
+         <div class="card text-center">
+          <div class="card-header"style="text-align:left">
+            <h6 class="m-0 fw-bold text-danger">각종 수치</h6>
+          </div>
+          <div class="card-body">
+            자료들 여기 들어가면 될듯
+            </div>
+          </div>
+          </div>
+          </div>
+          </div>
+    <!-- <div class="anchor" id="mask"></div> -->
+    <div class="col-xl-4 col-lg-12">
+      <div class="card shadow mb-4">
+        <!-- Card Header - Dropdown -->
+        <div class="card-header"style="text-align:left">
+          <h6 class="m-0 fw-bold text-danger">
+            변경된 마스크 관련 지침
+          </h6>
+        </div>
+        <div class="card-body">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" aria-label="Slide 9"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9" aria-label="Slide 10"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="img/mask_01.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="img/mask_02.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="img/mask_03.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="img/mask_04.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="img/mask_05.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="img/mask_06.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="img/mask_07.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="img/mask_08.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="img/mask_09.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="img/mask_10.jpg" class="d-block w-100" alt="...">
+              </div>
+              
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          
     
-    <div class="row">
-      <!-- 안전수칙 -->
+    <!-- <div class="row">
+     
       <div class="anchor" id="mask"></div>
       <div class="col-xl-4 col-lg-12">
         <div class="card shadow mb-4">
-          <!-- Card Header - Dropdown -->
+        
           <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
             <h6 class="m-0 fw-bold text-danger">
               변경된 마스크 관련 지침
@@ -1093,7 +1248,7 @@ viewBox= "-125 30 900 900" >
         </div>
         </div>
   </div>
-  </div>
+  </div> -->
   </body>
   </div>
   
@@ -1109,6 +1264,7 @@ viewBox= "-125 30 900 900" >
 
 
 </body>
+<script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 <script type="text/javascript">
 /* EXPANDER MENU */
 const showMenu = (toggleId, navbarId, bodyId) => {
@@ -1148,8 +1304,55 @@ for(i=0;i<linkCollapse.length;i++) {
         rotate.classList.toggle('rotate')
     });
 }
+//pie
+var ctxP = document.getElementById("pieChart").getContext('2d');
+        var myPieChart = new Chart(ctxP, {
+          type: 'pie',
+          data: {
+            labels: ["접종","미접종"],
+            datasets: [{
+              data: [829,171],
+              backgroundColor: ["#46BFBD","#F7464A"],
+              hoverBackgroundColor: ["#5AD3D1","#FF5A5E"]
+            }],
+                
+          },
+          options: {
+            responsive: false
+          }
+        });
 
+    var ctxP = document.getElementById("pieChart_1").getContext('2d');
+        var myPieChart = new Chart(ctxP, {
+            type: 'pie',
+          data: {
+            
+            datasets: [{
+              data: [801,199],
+              backgroundColor: ["#46BFBD","#F7464A"],
+              hoverBackgroundColor: ["#5AD3D1","#FF5A5E"]
+            }],
+        },
+          options: {
+            responsive: false
+          }
+        });
 
+    var ctxP = document.getElementById("pieChart_2").getContext('2d');
+        var myPieChart = new Chart(ctxP, {
+            type: 'pie',
+          data: {
+            
+            datasets: [{
+              data: [801,199],
+              backgroundColor: ["#46BFBD","#F7464A"],
+              hoverBackgroundColor: ["#5AD3D1","#FF5A5E"]
+            }],
+        },
+          options: {
+            responsive: false
+          }
+        });
 
 
 
