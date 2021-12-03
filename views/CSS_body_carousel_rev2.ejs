@@ -77,7 +77,7 @@ h1 {
 ul {
     margin: 0;
     padding: 0;
-    list-style: none;
+    /* list-style: none; */
 }
 
 a {
@@ -96,6 +96,7 @@ a {
     padding: 1.5rem 1.5rem 2rem;
     transition: .5s;
     z-index: var(--z-fixed);
+    
 }
 
 /* NAV */
@@ -135,8 +136,10 @@ a {
     color: var(--white-color);
     border-radius: .5rem;
     margin-bottom: 1rem;
-    transition: .3s;
+    transition: 0.3s;
     cursor: pointer;
+    
+    
 }
 
 .nav__link:hover {
@@ -180,12 +183,14 @@ a {
 
 .collapse__menu {
     display: none;
-    padding: .75rem 2.25rem;
+    padding: .75rem 1rem; 
+    margin:0 auto;
 }
 
 .collapse__sublink {
     color: var(--sub-color);
     font-size: var(--small-font-size);
+    text-overflow: ellipsis;
 }
 
 .collapse__sublink:hover {
@@ -258,12 +263,12 @@ div.anchor {
 </header>
 </head>
 
-<div class="intro_bg">
+
 <body id="body-pd">
   
     
-  <div class="l-navbar " id="navbar">
-      <nav class="nav nav-pills">
+  <div class="l-navbar" id="navbar">
+      <nav class="nav">
           <div>
               <div class="nav__brand">
                   <ion-icon name="list-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
@@ -282,13 +287,27 @@ div.anchor {
 
                  
 
-                  <a href="#mask" class="nav__link">
-                      <!-- <ion-icon name="pie-chart-outline" class="nav__icon"></ion-icon> -->
+                  <!-- <a href="#mask" class="nav__link">
+                      
                       
                         <ion-icon name="reorder-three-outline" class="nav__icon"></ion-icon>
                         <span class="nav_name">마스크 착용지침</span>
-                  </a>
+                  </a> -->
+                  <hr class="sidebar-divider d-none d-md-block">
+                  <div href="#" class="nav__link" style="grid-template-columns: 20px max-content 1fr;">
+                    <ion-icon name="logo-chrome" class="nav__icon"></ion-icon>
+                    <span class="nav_name">각종 링크들</span>
 
+                    <ion-icon name="chevron-down-outline" class="collapse__link "></ion-icon>
+
+                    <ul class="collapse__menu">
+                        <a href="https://kosis.kr/covid/covid_index.do" class="collapse__sublink">Corona Stats</a>
+                        <a href="#" class="collapse__sublink">Group</a>
+                        <a href="#" class="collapse__sublink">Members</a>
+                    </ul>
+                </div>
+
+                 
                   <!-- <a href="#" class="nav__link">
                   <span class="nav_name">
                     <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -305,7 +324,7 @@ div.anchor {
                   </a> -->
               
 
-
+                  <hr class="sidebar-divider d-none d-md-block">
               </div>
               <a href="html/search_button.html" class="nav__link">
                   <ion-icon name="search-outline" class="nav__icon"></ion-icon>
