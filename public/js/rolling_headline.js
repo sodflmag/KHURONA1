@@ -1,6 +1,7 @@
-
-    console.log(rollingData);
-    let timer = 3000 // 롤링되는 주기 (1000 => 1초)
+    
+    let jsonData3 = JSON.parse(JSON.stringify(rollingData));
+    rollingData = jsonData3;
+    let timer = 4000 // 롤링되는 주기 (1000 => 1초)
 
     let first = document.getElementById('first'),
         second = document.getElementById('second'),
@@ -61,6 +62,4 @@
         } else if (listCnt == 2) {
             listCnt = 0
         }
-
-        console.log(listCnt)
     }, timer);

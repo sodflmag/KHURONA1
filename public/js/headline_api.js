@@ -1,23 +1,9 @@
-let express = require('express');
-let app = express();
-app.use(express.static('public'));
-// static 선언
-app.set('view engine', 'ejs');
 
+function m() {
+    return new Promise(function(resolve, reject) {
 var fs = require('fs');
 const request = require("request");
-const convert = require("xml-js");
-// const date = new Date();
-// const year = date.getFullYear();
-// const month = date.getMonth() + 1 > 10 ? date.getMonth() + 1 : '0' + date.getMonth();
-// const day = date.getDate() > 10 ? date.getDate() : '0' + date.getDate(); 
-// month, date의 경우 10보다 작아지는 경우 앞에 0을 붙여줘야 정상적인 URL 생성이 가능함.
-const url = "http://apis.data.go.kr/1262000/NoticeService2/getNoticeList2?";
-const key = "AphC66GHAr%2Fsigd0y6R2i5kd0bw6DjE1I86L67QSSX16i4uzVjGh%2FRUINHg54kJIL9ADbF4lS3tCI4MxiRvxVA%3D%3D";
-const pageNo = "1";
-const numofRows = "1";
-// const startCreateDt = `${year}${month}${day}`;
-// const endCreateDt = `${year}${month}${day}`;
+const convert = require('xml-js');
 const requestURL = 'http://apis.data.go.kr/1262000/CountryNoticeService/getCountryNoticeList?serviceKey=AphC66GHAr%2Fsigd0y6R2i5kd0bw6DjE1I86L67QSSX16i4uzVjGh%2FRUINHg54kJIL9ADbF4lS3tCI4MxiRvxVA%3D%3D&numOfRows=10&pageNo=1';
 
 
@@ -52,19 +38,18 @@ getData().then(function(data1) {
     )}).then((result) => {
         // result = result.reverse();
         // console.log(result);
-        console.log(result[0])
 
         var rollingData = [                         
-            result[0].headline,
-            result[1].headline,
-            result[2].headline,
-            result[3].headline,
-            result[4].headline,
-            result[5].headline,
-            result[6].headline,
-            result[7].headline,
-            result[8].headline,
-            result[9].headline]
+            result[0]['headline'],
+            result[1]['headline'],
+            result[2]['headline'],
+            result[3]['headline'],
+            result[4]['headline'],
+            result[5]['headline'],
+            result[6]['headline'],
+            result[7]['headline'],
+            result[8]['headline'],
+            result[9]['headline']];
         
         // headline_info.json 
         var jsonData = JSON.stringify(rollingData);
@@ -74,28 +59,11 @@ getData().then(function(data1) {
                 console.log(err);
             }
         });
-        // 1번 ~ 10번까지 외교부 최신 공지사항 헤드라인 저장
-        app.get('/', (req, res) => {
-            res.render('view.ejs', {//작성 날짜 이용하려면 headline_dt
-                                    headline1: result[0].headline,
-                                    headline2: result[1].headline,
-                                    headline3: result[2].headline,
-                                    headline4: result[3].headline,
-                                    headline5: result[4].headline,
-                                    headline6: result[5].headline,
-                                    headline7: result[6].headline,
-                                    headline8: result[7].headline,
-                                    headline9: result[8].headline,
-                                    headline10: result[9].headline
-                                    
-        });         
-
-        });
-        
+        // 1번 ~ 10번까지 외교부 최신 공지사항 헤드라인 저장  
     })
+    resolve();
+    reject();
+})
+}
 
-console.log(requestURL)
-
-    app.listen(8080, () => {
-        console.log("listening port 8080");
-    });
+module.exports = m;

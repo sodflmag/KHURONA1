@@ -9,6 +9,7 @@ const cheerio = require("cheerio");
 const request = require("request");
 const convert = require("xml-js");
 const vaccine = require("./public/js/vaccine_cmd.js"); // 백신정보 모듈화 
+const rolling = require("./public/js/headline_api.js"); // 헤드라인 모듈화
 const fs = require('fs');   
 const date = new Date();
 
@@ -60,7 +61,7 @@ let titleList = [];
 
 
 // json 형식의 파일 받아옴.
-vaccine().then(getData().then(function(data) {
+vaccine().then(rolling().then(getData().then(function(data) {
     // vaccine으로 만든 json 파일에 변수명을 붙여줌
 
     fs.readFile("public/test_vaccine.json", 'utf-8', function(err, data2) {
@@ -153,7 +154,7 @@ vaccine().then(getData().then(function(data) {
                             die_accumu: result_arr[19]['_text'],
 });
 });
-}))
+})))
 
 
 
