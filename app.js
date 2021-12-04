@@ -79,6 +79,8 @@ vaccine().then(rolling().then(getData().then(function(data) {
             'areaAccumu' : areaAccumu,
     })
 }
+    result_arr.unshift(obj["response"]["body"]["items"]["item"][18]['isolClearCnt']);
+    result_arr.unshift(obj["response"]["body"]["items"]["item"][18]['overFlowCnt']);
     result_arr.unshift(obj["response"]["body"]["items"]["item"][18]['deathCnt']);
     resolve(result_arr); // result_arr 객체 형태로 지역 별 정보 저장.
     reject(new Error("failed"));
@@ -152,6 +154,8 @@ vaccine().then(rolling().then(getData().then(function(data) {
                             accumu_total: result_arr[0].areaAccumu,
                             new_total : result_arr[0].areaCovidcount,
                             die_accumu: result_arr[19]['_text'],
+                            isol :result_arr[21]['_text'],
+                            foreign : result_arr[20]['_text'],
 });
 });
 })))

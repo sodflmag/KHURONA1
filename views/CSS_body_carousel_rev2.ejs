@@ -880,7 +880,7 @@ viewBox= "-125 30 900 900" >
             
             <thead>
               <tr>
-                <th colspan="2">감염현황</th>
+                <th colspan="3">감염현황</th>
                 
               </tr>
             </thead>
@@ -888,7 +888,9 @@ viewBox= "-125 30 900 900" >
               <tr>
                 <th scope="row">확진환자<br>누적: <%=accumu_total%><br>신규: <%=new_total%></th>
                 
-                <th scope="row">사망자<br><p style="padding-top:5%;">누적: <%=die_accumu%></p></th>
+                <th scope="row">사망자<br><p style="padding-top:7%;">누적: <%=die_accumu%></p></th>
+
+                <th scope ="row">기타<br> 격리 중: <%=isol%> <br>해외유입: <%=foreign%> </th>
               </tr>
               </tbody>
           </table>
@@ -1126,7 +1128,6 @@ viewBox= "-125 30 900 900" >
             <h6 class="m-0 fw-bold text-danger">각종 수치</h6>
           </div>
           <div class="card-body">
-            자료들 여기 들어가면 될듯
             </div>
           </div>
           </div>
