@@ -8,6 +8,7 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const request = require("request");
 const convert = require("xml-js");
+const vaccine = require("./public/js/vaccine_cmd.js"); // 백신정보 모듈화 
 const fs = require('fs');   
 const date = new Date();
 
@@ -41,8 +42,6 @@ let requestURL = `${url}serviceKey=${key}&pageNo=${pageNo}&numoFRows=${numofRows
 
 
 
-
-console.log(requestURL)
 // 코로나 확진자 수 API 받아오는 구간
 function getData() {
     return new Promise(function(resolve, reject) {
@@ -61,58 +60,35 @@ let titleList = [];
 
 
 // json 형식의 파일 받아옴.
-getData().then(function(data) {
+vaccine().then(getData().then(function(data) {
     return new Promise(function(resolve, reject) {
         const obj = JSON.parse(data);
     for (x of obj["response"]["body"]["items"]["item"]) {
         const areaName = x['gubun']['_text'];
         const areaCovidCount = x['localOccCnt']['_text'];
+        const areaAccumu = x['defCnt']['_text'];
         result_arr.push({'areaName' : areaName, 
             'areaCovidcount' : areaCovidCount,
-            'deathCnt' : deathCnt,
-            'defCnt' : defCnt,
-            'incDec' : incDec,
-            'overFlowCnt' : overFlowCnt,
-            'isolClearCnt' : isolClearCnt
-            
+            'areaAccumu' : areaAccumu,
     })
-    // const deathCnt = obj["response"]["body"]["items"][0]["deathCnt"]["_text"];
-    // values.push({'deathCnt' : deathCnt});
+}
+    result_arr.unshift(obj["response"]["body"]["items"]["item"][18]['deathCnt']);
+    resolve(result_arr); // result_arr 객체 형태로 지역 별 정보 저장.
+    reject(new Error("failed"));
     }
 
     )}).then((result) => {
         result = result.reverse();
         // console.log(result);
-        // 1번부터 서울, 17번 제주까지.
-        // 각종 수치 표 정보
-        app.get('/', (req, res) => {
-            res.render('view.ejs', {distancingval1: result[1].areaCovidcount,
-                                    distancingval2: result[2].areaCovidcount,
-                                    distancingval3: result[3].areaCovidcount,
-                                    distancingval4: result[4].areaCovidcount,
-                                    distancingval5: result[5].areaCovidcount,
-                                    distancingval6: result[6].areaCovidcount,
-                                    distancingval7: result[7].areaCovidcount,
-                                    distancingval8: result[8].areaCovidcount,
-                                    distancingval9: result[9].areaCovidcount,
-                                    distancingval10: result[10].areaCovidcount,
-                                    distancingval11: result[11].areaCovidcount,
-                                    distancingval12: result[12].areaCovidcount,
-                                    distancingval13: result[13].areaCovidcount,
-                                    distancingval14: result[14].areaCovidcount,
-                                    distancingval15: result[15].areaCovidcount,
-                                    distancingval16: result[16].areaCovidcount,
-                                    distancingval17: result[17].areaCovidcount,
-                                    date : `${year}.${month}.${day}`,
-                                    deathCnt: result[0].deathCnt,
-                                    defCnt: result[0].defCnt,
-                                    incDec: result[0].incDec,
-                                    overFlowCnt: result[0].overFlowCnt,
-                                    isolClearCnt: result[0].isolClearCnt,
-                                    defToday: Number(result[0].areaCovidcount) + Number(result[0].overFlowCnt)
-        });
-        });
-        
+        result_arr = result;
+        // console.log(result_arr);
+
+        return new Promise(function(resolve, reject) {
+            {
+                resolve(axios.get("http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubun="));
+    
+                reject("Crawling failed");
+        }
     })
     }).then(html => {
     const $ = cheerio.load(html.data);
@@ -129,8 +105,6 @@ getData().then(function(data) {
       const getJson = ParseAndMakeJson(titleList); // JSON 형식으로 크롤링 정보를 저장했음.
       const StringJson = JSON.stringify(getJson);
       fs.writeFileSync('public/crawling-info.json', "Params = " + StringJson);
-
-
        // 1번부터 서울, 17번 제주까지.
  app.get('/', (req, res) => {
     res.render('CSS_body_carousel_rev2.ejs', {distancingval1: result_arr[1].areaCovidcount,
@@ -150,12 +124,30 @@ getData().then(function(data) {
                             distancingval15: result_arr[15].areaCovidcount,
                             distancingval16: result_arr[16].areaCovidcount,
                             distancingval17: result_arr[17].areaCovidcount,
-                            date : `${year}.${month}.${day}`
-                            
+                            date : `${year}.${month}.${day}`,
+                            accumu_1: result_arr[1].areaAccumu,
+                            accumu_2: result_arr[2].areaAccumu,
+                            accumu_3: result_arr[3].areaAccumu,
+                            accumu_4: result_arr[4].areaAccumu,
+                            accumu_5: result_arr[5].areaAccumu,
+                            accumu_6: result_arr[6].areaAccumu,
+                            accumu_7: result_arr[7].areaAccumu,
+                            accumu_8: result_arr[8].areaAccumu,
+                            accumu_9: result_arr[9].areaAccumu,
+                            accumu_10: result_arr[10].areaAccumu,
+                            accumu_11: result_arr[11].areaAccumu,
+                            accumu_12: result_arr[12].areaAccumu,
+                            accumu_13: result_arr[13].areaAccumu,
+                            accumu_14: result_arr[14].areaAccumu,
+                            accumu_15: result_arr[15].areaAccumu,
+                            accumu_16: result_arr[16].areaAccumu,
+                            accumu_17: result_arr[17].areaAccumu,
+                            accumu_total: result_arr[0].areaAccumu,
+                            new_total : result_arr[0].areaCovidcount,
+                            die_accumu: result_arr[19]['_text'],
 });
 });
-})
-
+}))
 
 
 

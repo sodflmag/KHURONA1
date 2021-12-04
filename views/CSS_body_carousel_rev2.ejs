@@ -244,9 +244,9 @@ div.anchor {
 
 
  </style>
-  <link rel = "stylesheet" href = "css/Style.css">
+  <link rel = "stylesheet" href = "css/Style2.css">
   <link rel = "stylesheet" href = "css/map.css">
-  <link rel = "stylesheet" href = "css/hiddeninfo.css">
+  <link rel = "stylesheet" href = "css/Hiddeninfo.css">
 </div>
 <header>
   
@@ -886,9 +886,9 @@ viewBox= "-125 30 900 900" >
             </thead>
             <tbody>
               <tr>
-                <th scope="row">확진환자<br>누적: 440896<br>신규: 3928</th>
+                <th scope="row">확진환자<br>누적: <%=accumu_total%><br>신규: <%=new_total%></th>
                 
-                <th scope="row">사망자<br>누적: 3548<br>신규: 56</th>
+                <th scope="row">사망자<br><p style="padding-top:5%;">누적: <%=die_accumu%></p></th>
               </tr>
               </tbody>
           </table>
@@ -903,96 +903,92 @@ viewBox= "-125 30 900 900" >
             </thead>
             <tbody>
               <tr>
-                <th scope="row">서울</th>
-                <td>155111</td>
-                <td>1645</td>
+                <th scope="row">서울시</th>
+                <td><%= accumu_1%></td>
+                <td><%=distancingval1%></td>
                 
               </tr>
               <tr>
-                <th scope="row">서울</th>
-                <td>155111</td>
-                <td>1645</td>
+                <th scope="row">부산시</th>
+                <td><%= accumu_2%></td>
+                <td><%= distancingval2 %></td>
               </tr>
               <tr>
-                <th scope="row">서울</th>
-                <td>155111</td>
-                <td>1645</td>
+                <th scope="row">대구시</th>
+                <td><%= accumu_3%></td>
+                <td><%= distancingval3 %></td>
               </tr>
               <tr>
-                <th scope="row">서울</th>
-                <td>155111</td>
-                <td>1645</td>
+                <th scope="row">인천시</th>
+                <td><%= accumu_4%></td>
+                <td><%= distancingval4 %></td>
               </tr>
               <tr>
-                <th scope="row">서울</th>
-                <td>155111</td>
-                <td>1645</td>
+                <th scope="row">광주시</th>
+                <td><%= accumu_5%></td>
+                <td><%= distancingval5 %></td>
               </tr>
               <tr>
-                <th scope="row">서울</th>
-                <td>155111</td>
-                <td>1645</td>
+                <th scope="row">대전시</th>
+                <td><%= accumu_6%></td>
+                <td><%= distancingval6 %></td>
               </tr>
               <tr>
-                <th scope="row">서울</th>
-                <td>155111</td>
-                <td>1645</td>
+                <th scope="row">울산시</th>
+                <td><%= accumu_7%></td>
+                <td><%= distancingval7 %></td>
               </tr>
               <tr>
-                <th scope="row">서울</th>
-                <td>155111</td>
-                <td>1645</td>
+                <th scope="row">세종시</th>
+                <td><%= accumu_8%></td>
+                <td><%= distancingval8 %></td>
               </tr>
               <tr>
-                <th scope="row">서울</th>
-                <td>155111</td>
-                <td>1645</td>
+                <th scope="row">경기도</th>
+                <td><%= accumu_9%></td>
+                <td><%= distancingval9 %></td>
               </tr>
               <tr>
-                <th scope="row">서울</th>
-                <td>155111</td>
-                <td>1645</td>
+                <th scope="row">강원도</th>
+                <td><%= accumu_10%></td>
+                <td><%= distancingval10 %></td>
               </tr>
               <tr>
-                <th scope="row">서울</th>
-                <td>155111</td>
-                <td>1645</td>
+                <th scope="row">충청북도</th>
+                <td><%= accumu_11%></td>
+                <td><%= distancingval11 %></td>
               </tr>
               <tr>
-                <th scope="row">서울</th>
-                <td>155111</td>
-                <td>1645</td>
+                <th scope="row">충청남도</th>
+                <td><%= accumu_12%></td>
+                <td><%= distancingval12 %></td>
               </tr>
               <tr>
-                <th scope="row">서울</th>
-                <td>155111</td>
-                <td>1645</td>
+                <th scope="row">전라북도</th>
+                <td><%= accumu_13%></td>
+                <td><%= distancingval13 %></td>
               </tr>
               <tr>
-                <th scope="row">서울</th>
-                <td>155111</td>
-                <td>1645</td>
+                <th scope="row">전라남도</th>
+                <td><%= accumu_14%></td>
+                <td><%= distancingval14 %></td>
               </tr>
               <tr>
-                <th scope="row">서울</th>
-                <td>155111</td>
-                <td>1645</td>
+                <th scope="row">경상북도</th>
+                <td><%= accumu_15%></td>
+                <td><%= distancingval15 %></td>
               </tr>
               <tr>
-                <th scope="row">서울</th>
-                <td>155111</td>
-                <td>1645</td>
+                <th scope="row">경상남도</th>
+                <td><%= accumu_16%></td>
+                <td><%= distancingval16 %></td>
               </tr>
               <tr>
-                <th scope="row">서울</th>
-                <td>155111</td>
-                <td>1645</td>
+                <th scope="row">제주도</th>
+                <td><%= accumu_17%></td>
+                <td><%= distancingval17%></td>
               </tr>
-              <tr>
-                <th scope="row">서울</th>
-                <td>155111</td>
-                <td>1645</td>
-              </tr>
+
 
             </tbody>
           </table>
@@ -1280,7 +1276,6 @@ viewBox= "-125 30 900 900" >
 <script type = "text/javascript" src = "crawling-info.json"></script>
 <script src="js/hiddeninfo.js"></script>
 <script src="js/travelinfo.js"></script>
-
 
 </body>
 <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>

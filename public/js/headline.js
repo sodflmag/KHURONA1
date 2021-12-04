@@ -1,17 +1,10 @@
 function getAPIInfo() {
-    const url = "http://apis.data.go.kr/1262000/NoticeService2/getNoticeList2?";
-const key = "AphC66GHAr%2Fsigd0y6R2i5kd0bw6DjE1I86L67QSSX16i4uzVjGh%2FRUINHg54kJIL9ADbF4lS3tCI4MxiRvxVA%3D%3D";
-const pageNo = "1";
-const numofRows = "1";
-// const startCreateDt = `${year}${month}${day}`;
-// const endCreateDt = `${year}${month}${day}`;
-const requestURL = `${url}serviceKey=${key}&pageNo=${pageNo}&numoFRows=${numofRows}&returnType=XML`;
+    const url = 'http://apis.data.go.kr/1262000/CountryNoticeService/getCountryNoticeList?serviceKey=AphC66GHAr%2Fsigd0y6R2i5kd0bw6DjE1I86L67QSSX16i4uzVjGh%2FRUINHg54kJIL9ADbF4lS3tCI4MxiRvxVA%3D%3D&numOfRows=10&pageNo=1';
 
     let jsonFile;
     return new Promise(function(resolve, reject) {
-        console.log(123);
         let xhr = new XMLHttpRequest();
-        xhr.open('GET', requestURL);
+        xhr.open('GET', url);
         xhr.onreadystatechange = function () {
             if (this.readyState == 4) {
                 jsonFile = JSON.parse(this.responseText);
