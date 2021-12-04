@@ -1,37 +1,37 @@
 .OUTLINE {
     stroke-linejoin:round;
-    stroke: #e2f9ff;
+    stroke: beige;
     stroke-width: 2;
 }
 
 
 .CD {
-    fill: #ffd4b7;
+    fill: #F1F3DE;
 }
 
 .TEXT {
     fill: #ffffff;
-    font-size: 27px;
+    font-size: 30px;
     text-anchor: middle;
     user-select: none;
     /* alignment-baseline: middle; */
 }
 .mouseEnter {
     /* important를 추가함으로써 distancelvl과 클래스보다 우선순위를 높임 */
-    fill: #62ad9b !important;
+    fill: yellowgreen !important;
 }
 
 /* 거리두기 2단계 */
 .distancelvl2 {
-    fill: #fc9f61;
+    fill: #ff9595;
 }
 /* 거리두기 3단계 */
 .distancelvl3 {
-    fill: #ff643d;
+    fill: #f76072;
 }
 /* 거리두기 4단계 */
 .distancelvl4 {
-    fill: #a12505;
+    fill: #ff2121;
 }
 
 #distancing_img {
@@ -50,17 +50,18 @@
 
 #distancing_explain {
     width: 200px;
-    color: black;
+    color: #2E4C6D;
     user-select: none;
     text-align: center;
     margin-left: 42px;
-    margin-top: 30px;
+    margin-top: 20px;
     padding-top: 10px;
     font-size: 15px;
+    font-weight: bold;
     border:1px solid white;
     background-color: rgba(255, 236, 244, 0.637);
     border-radius: 15px;
-
+    line-height: 200%;
 }
 
 #text_explain {
@@ -68,12 +69,14 @@
     font-weight: bold;
     float:right;
     margin-bottom: 0%;
+    color:#515070;
+    font-family: 'SBAggroB'
 }
  #clock {
     text-decoration: none;
-    color:black;
+    color:#2E4C6D;
     /* letter-spacing: 2px; */
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
     padding-left: 20%;
     padding-top: 20%;

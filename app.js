@@ -8,8 +8,6 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const request = require("request");
 const convert = require("xml-js");
-const vaccine = require("./public/js/vaccine_cmd.js"); // 백신정보 모듈화 
-const rolling = require("./public/js/headline_api.js"); // 헤드라인 모듈화
 const fs = require('fs');   
 const date = new Date();
 
@@ -43,6 +41,7 @@ let requestURL = `${url}serviceKey=${key}&pageNo=${pageNo}&numoFRows=${numofRows
 
 
 
+
 // 코로나 확진자 수 API 받아오는 구간
 function getData() {
     return new Promise(function(resolve, reject) {
@@ -61,36 +60,25 @@ let titleList = [];
 
 
 // json 형식의 파일 받아옴.
-vaccine().then(rolling().then(getData().then(function(data) {
-    // vaccine으로 만든 json 파일에 변수명을 붙여줌
-
-    fs.readFile("public/test_vaccine.json", 'utf-8', function(err, data2) {
-        fs.writeFile("public/test_vaccine.json", "Params2 =" + data2, (err) => console.log(err));
-    })
-
+getData().then(function(data) {
     return new Promise(function(resolve, reject) {
         const obj = JSON.parse(data);
     for (x of obj["response"]["body"]["items"]["item"]) {
         const areaName = x['gubun']['_text'];
         const areaCovidCount = x['localOccCnt']['_text'];
-        const areaAccumu = x['defCnt']['_text'];
         result_arr.push({'areaName' : areaName, 
             'areaCovidcount' : areaCovidCount,
-            'areaAccumu' : areaAccumu,
     })
 }
-    result_arr.unshift(obj["response"]["body"]["items"]["item"][18]['isolClearCnt']);
-    result_arr.unshift(obj["response"]["body"]["items"]["item"][18]['overFlowCnt']);
-    result_arr.unshift(obj["response"]["body"]["items"]["item"][18]['deathCnt']);
+
     resolve(result_arr); // result_arr 객체 형태로 지역 별 정보 저장.
     reject(new Error("failed"));
     }
 
     )}).then((result) => {
         result = result.reverse();
-        // console.log(result);
         result_arr = result;
-        // console.log(result_arr);
+
 
         return new Promise(function(resolve, reject) {
             {
@@ -114,6 +102,8 @@ vaccine().then(rolling().then(getData().then(function(data) {
       const getJson = ParseAndMakeJson(titleList); // JSON 형식으로 크롤링 정보를 저장했음.
       const StringJson = JSON.stringify(getJson);
       fs.writeFileSync('public/crawling-info.json', "Params = " + StringJson);
+
+
        // 1번부터 서울, 17번 제주까지.
  app.get('/', (req, res) => {
     res.render('CSS_body_carousel_rev2.ejs', {distancingval1: result_arr[1].areaCovidcount,
@@ -133,32 +123,12 @@ vaccine().then(rolling().then(getData().then(function(data) {
                             distancingval15: result_arr[15].areaCovidcount,
                             distancingval16: result_arr[16].areaCovidcount,
                             distancingval17: result_arr[17].areaCovidcount,
-                            date : `${year}.${month}.${day}`,
-                            accumu_1: result_arr[1].areaAccumu,
-                            accumu_2: result_arr[2].areaAccumu,
-                            accumu_3: result_arr[3].areaAccumu,
-                            accumu_4: result_arr[4].areaAccumu,
-                            accumu_5: result_arr[5].areaAccumu,
-                            accumu_6: result_arr[6].areaAccumu,
-                            accumu_7: result_arr[7].areaAccumu,
-                            accumu_8: result_arr[8].areaAccumu,
-                            accumu_9: result_arr[9].areaAccumu,
-                            accumu_10: result_arr[10].areaAccumu,
-                            accumu_11: result_arr[11].areaAccumu,
-                            accumu_12: result_arr[12].areaAccumu,
-                            accumu_13: result_arr[13].areaAccumu,
-                            accumu_14: result_arr[14].areaAccumu,
-                            accumu_15: result_arr[15].areaAccumu,
-                            accumu_16: result_arr[16].areaAccumu,
-                            accumu_17: result_arr[17].areaAccumu,
-                            accumu_total: result_arr[0].areaAccumu,
-                            new_total : result_arr[0].areaCovidcount,
-                            die_accumu: result_arr[19]['_text'],
-                            isol :result_arr[21]['_text'],
-                            foreign : result_arr[20]['_text'],
+                            date : `${year}.${month}.${day}`
+                            
 });
 });
-})))
+})
+
 
 
 
