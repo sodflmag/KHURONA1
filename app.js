@@ -61,6 +61,12 @@ let titleList = [];
 
 // json 형식의 파일 받아옴.
 vaccine().then(getData().then(function(data) {
+    // vaccine으로 만든 json 파일에 변수명을 붙여줌
+
+    fs.readFile("public/test_vaccine.json", 'utf-8', function(err, data2) {
+        fs.writeFile("public/test_vaccine.json", "Params2 =" + data2, (err) => console.log(err));
+    })
+
     return new Promise(function(resolve, reject) {
         const obj = JSON.parse(data);
     for (x of obj["response"]["body"]["items"]["item"]) {
