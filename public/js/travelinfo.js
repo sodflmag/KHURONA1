@@ -3,8 +3,8 @@ function getAPIInfo(AREACODE, CONTENT_TYPE_ID) {
     const page_no = 1;
     const mobile_os = "ETC"; // 컴퓨터 웹페이지이므로
     const mobile_app = "TravelInfo"; // 서비스명
-    // const service_key = "680%2FgyPOpacfjvTYIO1H2rHe4F%2FfdZV1jVBWfNkVZt8XL9zsYRp%2BbIO2%2FGwKolSMM6RcViMLiPgq4S%2BQJhROFQ%3D%3D";
-    const service_key = "AphC66GHAr%2Fsigd0y6R2i5kd0bw6DjE1I86L67QSSX16i4uzVjGh%2FRUINHg54kJIL9ADbF4lS3tCI4MxiRvxVA%3D%3D";
+    const service_key = "680%2FgyPOpacfjvTYIO1H2rHe4F%2FfdZV1jVBWfNkVZt8XL9zsYRp%2BbIO2%2FGwKolSMM6RcViMLiPgq4S%2BQJhROFQ%3D%3D";
+    // const service_key = "AphC66GHAr%2Fsigd0y6R2i5kd0bw6DjE1I86L67QSSX16i4uzVjGh%2FRUINHg54kJIL9ADbF4lS3tCI4MxiRvxVA%3D%3D";
     const url = `http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaBasedList?numOfRows=${num_of_rows}&pageNo=${page_no}&ServiceKey=${service_key}&contentTypeId=${CONTENT_TYPE_ID}&areaCode=${AREACODE}&MobileOS=${mobile_os}&MobileApp=${mobile_app}&listYN=Y&_type=json`;
     let jsonFile;
     return new Promise(function(resolve, reject) {
@@ -79,29 +79,15 @@ const code_array = [1, 6, 4, 2, 5, 3, 7, 8, 31, 32, 33, 34, 37, 38, 35, 36, 39];
 // 시군구 코드는 option 이므로 적어주지 않아도 될 듯함.
 
 const area_rights = document.querySelectorAll(".area-right");
-const areas = document.querySelectorAll("path");
-const text_s = document.getElementsByTagName("text");
 
-for (let j = 0; j < areas.length; j++) {
-    areas[j].addEventListener('click', function() {
-            getAPIInfo(code_array[j], 12).then((response) => {
-                // console.log(response);
-                const divs = JsonToVisibleInfo(response);
-                area_rights[j].appendChild(divs);
-            }).catch((errorMsg)=> {
-                console.log(errorMsg);
-            });
-    })
-
-    text_s[j].addEventListener('click', function() {
-        getAPIInfo(code_array[j], 12).then((response) => {
-            // console.log(response);
-            const divs = JsonToVisibleInfo(response);
-            area_rights[j].appendChild(divs);
-        }).catch((errorMsg)=> {
-            console.log(errorMsg);
-        });
-})
+for (let i = 0; i < area_rights.length; i++) {
+    getAPIInfo(code_array[i], 12).then((response) => {
+        // console.log(response);
+        const divs = JsonToVisibleInfo(response);
+        area_rights[i].appendChild(divs);
+    }).catch((errorMsg)=> {
+        console.log(errorMsg);
+    });
 }
 
 const buttons = document.querySelectorAll(".reget-button");
@@ -113,11 +99,12 @@ for (let i = 0; i < buttons.length; i++) {
 
         const contentIds = [12, 14, 15, 25, 28, 32, 38, 39];
         const index = selects[i].selectedIndex;
+
         getAPIInfo(code_array[i], contentIds[index]).then((response) => {
             // console.log(response);
             const divs = JsonToVisibleInfo(response);
-            const temp = buttons[i].parentElement.parentElement.querySelector(".main-div");
-            area_rights[i].removeChild(temp);
+            const temp = document.querySelectorAll(".main-div");
+            area_rights[i].removeChild(temp[i]);
             area_rights[i].appendChild(divs);
         }).catch((errorMsg)=> {
             console.log(errorMsg);
