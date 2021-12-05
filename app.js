@@ -8,6 +8,7 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const request = require("request");
 const convert = require("xml-js");
+const xml2js = require('xml2js');
 const vaccine = require("./public/js/vaccine_cmd.js"); // 백신정보 모듈화 
 const rolling = require("./public/js/headline_api.js"); // 헤드라인 모듈화
 const fs = require('fs');   
@@ -58,10 +59,38 @@ function getData() {
 
 let result_arr = [];
 let titleList = [];
+let values = [];
 
-
+function notification() {
+    const url = "http://apis.data.go.kr/1262000/NoticeService2/getNoticeList2?";
+    const key = "AphC66GHAr%2Fsigd0y6R2i5kd0bw6DjE1I86L67QSSX16i4uzVjGh%2FRUINHg54kJIL9ADbF4lS3tCI4MxiRvxVA%3D%3D";
+    const pageNo = "1";
+    const numofRows = "1";
+    const requestURL = `${url}serviceKey=${key}&pageNo=${pageNo}&numoFRows=${numofRows}&returnType=XML`;
+    return new Promise(function(resolve, reject) {
+        request(requestURL, (err, response, body) => {
+            if(response) {
+                const xmlToJson = convert.xml2json(body, {compact: true, spaces: 4});
+                resolve(xmlToJson);
+            }
+            reject(new Error("Request is failed"));
+        });
+    });
+}
+function replaceAll(str, searchStr, replaceStr) {
+    return str.split(searchStr).join(replaceStr);
+  }
 // json 형식의 파일 받아옴.
-vaccine().then(rolling().then(getData().then(function(data) {
+notification().then(function(data1) {
+    // console.log(data1);
+    const obj = JSON.parse(data1);
+    for (x of obj["results"]["data"]["item"]) {
+        const title = x["title"]['_text'];
+        const contents = x['txt_origin_cn']['_text'];
+        const written_dt = x['written_dt']['_text'];
+        values.push({"title" : title, "contents" : contents, "written_dt" : written_dt});
+    }
+}).then(vaccine().then(rolling().then(getData().then(function(data) {
     // vaccine으로 만든 json 파일에 변수명을 붙여줌
 
     fs.readFile("public/test_vaccine.json", 'utf-8', function(err, data2) {
@@ -115,6 +144,35 @@ vaccine().then(rolling().then(getData().then(function(data) {
       const StringJson = JSON.stringify(getJson);
       fs.writeFileSync('public/crawling-info.json', "Params = " + StringJson);
        // 1번부터 서울, 17번 제주까지.
+       
+
+       //values 내용정리
+    //    let str = "";
+    //    for (let k = 0; k < 10; k++) {
+    //         str += values[k][0]; // title
+    //         str += "(" + values[k][2] + ")";
+    //         str += '<br>';
+    //         // console.log(str);
+    //         temp = values[k][1]; 
+    //         // nbsp 제거
+    //         // replaceAll(temp, 'nbsp;', '\n');
+    //         // %#038 제거
+    //         // replaceAll(temp, '&#038;', '');
+    //         str += temp;
+    //    }
+    for (let v = 0; v < 10; v++) {
+        values[v]['contents'] = replaceAll(values[v]['contents'], 'nbsp;', '\n');
+        values[v]['contents'] = replaceAll(values[v]['contents'], '&#038;', '');
+    }
+
+    let str = "";
+        for (let v = 0; v < 10; v++) {
+        str += values[v]['title'] + '(' + values[v]['written_dt'] + ')';
+        str += '\n\n\n';
+        str += values[v]['contents'];
+        str += '\n\n\n';
+    }
+
  app.get('/', (req, res) => {
     res.render('CSS_body_carousel_rev2.ejs', {distancingval1: result_arr[1].areaCovidcount,
                             distancingval2: result_arr[2].areaCovidcount,
@@ -156,15 +214,16 @@ vaccine().then(rolling().then(getData().then(function(data) {
                             die_accumu: result_arr[19]['_text'],
                             isol :result_arr[21]['_text'],
                             foreign : result_arr[20]['_text'],
+                            string_ : str,
 });
 });
-})))
+}))))
 
 
 
 
-app.listen(8080, () => {
-    console.log("listening port 8080");
+app.listen(23023, () => {
+    console.log("listening port 23023");
 });
     // 정각이 넘어가면 API 데이터가 일정 시간 동안은 넘어오지 않는 문제 발생, 어떻게 처리할 것인지?
     // 또한 날짜가 넘어갈 때마다 서버를 재시작할 것인지? 새로 바뀐 데이터를 어떻게 반영할까?
