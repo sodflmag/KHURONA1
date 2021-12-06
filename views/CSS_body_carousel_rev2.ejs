@@ -10,9 +10,11 @@
 
     <title>KHURONA</title>
     <div class="intro_bg">
-      <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
-      
+      <!-- <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet"> -->
+      <meta name="referrer" content="no-referrer" />
+
  <style>
+   
    /* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"); */
    @font-face {
     font-family: 'Cafe24Ssurround';
@@ -45,26 +47,22 @@
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-  font-family: 'NanumSquareRoundLight';
-  font-family: 'NanumSquareRound';
-  font-family: 'NanumSquareRoundBold';
-  font-family: 'NanumSquareRoundExtraBold';
-     src: url("https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" );
- 
-}
+
+
 @font-face {
     font-family: 'KoPubDotumMedium';
      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/KoPubDotumMedium.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'NanumSquareRound';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'OTWelcomeBA';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeBA.woff2') format('woff2');
@@ -160,7 +158,7 @@ a {
     left: 0;
     width: var(--nav--width);
     height: 100vh;
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(250, 250, 250);
     color: var(--white-color);
     padding: 1.5rem 1.5rem 2rem;
     transition: .5s;
@@ -292,7 +290,7 @@ header{
   width: 100%;
   height: 50px;
   padding: 10px;
-  background: rgb(240, 240, 240);
+  background: rgb(250, 250, 250);
   z-index: 800;
   place-content: left;
   border-bottom: 1px solid #2E4C6D;
@@ -344,7 +342,9 @@ footer#body-pd{
   font-family: 'SBAggroB';
   font-size: 0.5rem;
 } */
-
+.card{
+  border-radius: 15px;
+}
 
 
 
@@ -356,6 +356,9 @@ footer#body-pd{
 <header>
   
   <img src="/img/logo.PNG"style="width:150px">
+  <!-- <img src="/img/~~~~"style="width:35px"> ~~부분에 파일 이름 적으면 돼 그냥 ~~.svg이렇게 -->
+
+
   <!-- <ion-icon name="logo-github" class="nav__icon"></ion-icon> -->
   <div style= "float: right;margin:rem;">
     <a href="http://www.github.com"style="color:black;"><ion-icon name="logo-github" class="nav__icon" style="color:black;"size="large"></ion-icon>git-hub</a>
@@ -384,11 +387,11 @@ footer#body-pd{
                   <a href="#map" class="nav__link active">
                     <ion-icon name="remove-outline" class="nav__icon"></ion-icon>
                       
-                      <span class="nav_name">각 도별 거리두기</span>
+                      <span class="nav_name">시ㆍ도별 위험도 맵</span>
                   </a>
                   <a href="#flightinfo" class="nav__link">
                       <ion-icon name="reorder-two-outline" class="nav__icon"></ion-icon>
-                      <span class="nav_name">해외 항공정보</span>
+                      <span class="nav_name">국가별 안전 소식</span>
                   </a>
 
                  
@@ -447,8 +450,8 @@ footer#body-pd{
 
 
   <!-- IONICONS -->
+  <!-- <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script> -->
   <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
-  
 </body>
 <body>
   
@@ -459,9 +462,9 @@ footer#body-pd{
     <div class="col-xl-9 col-lg-12 status-now">
     
    
-      <div class="card shadow mb-4">
+      <div class="card shadow mb-4"style="height:52.7rem">
         <div class="card-header">
-          <h6 class="m-0 fw-bold" style="color:#3b3b3b;font-size: 1.2rem ;font-family: 'twayair';float: left;">각 도별 거리두기 단계</h6>
+          <h6 class="m-0 fw-bold" style="color:#3b3b3b;font-size: 1.2rem ;font-family: 'twayair';float: left;">시ㆍ도별 위험도 맵</h6>
           <p id = "text_explain"style="float:right;">
             * 원하는 지역을 클릭하면 세부 지역 별 확진자 정보와 여행정보를 제공합니다.
         </p>
@@ -473,7 +476,7 @@ footer#body-pd{
               <img src = "img/distancing_val_image.png" id = "distancing_img">
               <p id = "distancing_explain"> 
                 <b style="font-size: 25px;">위험도 기준</b><br>
-                1 : 확진자 수 50명 미만 <br>
+                <b style="padding-right: 10px;"> 1 : 확진자 수 50명 미만 </b><br>
                 2 : 확진자 수 100명 미만 <br> 
                 3 : 확진자 수 200명 미만 <br> 
                 4 : 확진자 수 200명 이상 <br> 
@@ -983,7 +986,7 @@ viewBox= "-125 30 900 900" >
     <div class="col-xl-3 col-lg-12 status-now">
       <div class="card shadow mb-4">
         <div class="card-header">
-          <h6 class="m-0 fw-bold" style="color:#065C6F;font-size: 1.2rem ;font-family: 'twayair';">일일 신규 확진자 수</h6>
+          <h6 class="m-0 fw-bold" style="color:#065C6F;font-size: 1.2rem ;font-family: 'twayair';">코로나19 시도 발생 현황</h6>
         </div>
         <div class="card-body">
           <table class="table table-sm table-bordered">
@@ -1121,7 +1124,7 @@ viewBox= "-125 30 900 900" >
         <div class="card shadow mb-4">
            <div class="card text-center">
           <div class="card-header">
-            <h6 class="m-0 fw-bold" style="color:#3b3b3b;font-size: 1.2rem ;font-family: 'twayair';float: left;">해외관련 뉴스 헤드라인</h6>
+            <h6 class="m-0 fw-bold" style="color:#3b3b3b;font-size: 1.2rem ;font-family: 'twayair';float: left;">해외 국가별 최신 안전 소식</h6>
           </div>
           <div class="card-body">
             <div class="rolling_box">
@@ -1143,23 +1146,23 @@ viewBox= "-125 30 900 900" >
         <div class="card shadow mb-4">
            <div class="card text-center">
           <div class="card-header">
-        
-            <ul class="nav nav-pills" role="tablist" style="flex-direction: row; justify-content:left">
+            <h6 class="m-0 fw-bold" style="color:#3b3b3b;font-size: 1.2rem ;font-family: 'twayair';float: left;">해외 출국전 확인사항</h6>
+            <!-- <ul class="nav nav-pills" role="tablist" style="flex-direction: row; justify-content:left">
               <li class="nav-item">
-                <a class="nav-link disabled " href="#" ><h6 class="m-0 fw-bold" style="color:#3b3b3b;font-size: 1.2rem ;font-family: 'twayair';float: left;">해외 중요정보</h6></a>
-              <li class="nav-item">
+                <a class="nav-link disabled " href="#" ><h6 class="m-0 fw-bold" style="color:#3b3b3b;font-size: 1.2rem ;font-family: 'twayair';float: left;">해외 출국전 확인사항</h6></a> -->
+              <!-- <li class="nav-item">
                 <a class="nav-link active" data-bs-toggle="tab" href="#America">미국</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="tab" href="#Japan">일본</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#Europe">유럽</a>
-              </li>
-            </ul>
+                <a class="nav-link" data-bs-toggle="tab" href="#Europe">유럽</a> -->
+              <!-- </li>
+            </ul> -->
           </div>
             <div class="card-body" style="overflow: scroll; overflow-x: hidden; height:30rem;">
-              <div class="tab-content">
+              <!-- <div class="tab-content">
                 
                 <div id="America" class="container tab-pane active" style="background-color: white;"><br>
                   <h5 class="card-title">미국 항공정보</h5>
@@ -1174,7 +1177,9 @@ viewBox= "-125 30 900 900" >
                   <h5 class="card-title">유럽 항공정보</h5>
                   <p>항공정보</p>
                 </div>
-              </div>
+              </div> -->
+              <p style="line-height: 1.5;"><span style="font-size: 12pt;">○ 영국 정부는 2021.01.15.(금) 총리 브리핑을 통해 코로나19 변이바이러스의 세계적 확산에 따라 2021.1.18.(월) 04:00부터 기존 코로나19 저위험국가 입국자 대상 자가격리 면제제도(Travel Corridors)를 중단하고 대한민국을 포함한 모든 해외입국자를 대상으로 10일간 자가격리 의무를 부여할 예정입니다.</span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;">○ 같은 일시부터 영국 입국 시 코로나19 음성확인서 제출 의무화(Passenger Locator Form도 별도로 제출 필요)도 함께 시행되오니 영국에 입국할 계획이 있으신 우리 국민께서는 각별히 유념하여 주시기 바랍니다.</span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;">○ 영국 내 자가격리와 관련된 보다 자세한 내용은 아래의 영국정부 홈페이지를 참고해 주시기 바랍니다.</span></p><p style="line-height: 1.5; margin-left: 40px; margin-right: 40px;"><span style="font-size: 12pt;">※ Coronavirus (COVID-19): how to self-isolate when you travel to England</span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;">○ 기타 도움이 필요하시거나 긴급 상황 발생 시 아래 연락처로 연락해 주시기 바랍니다.</span></p><p style="line-height: 1.5; margin-left: 30px; margin-right: 30px;"><span style="font-size: 12pt;">☞ 주영국대한민국대사관<br>&#038;nbsp; &#038;nbsp;- 대표번호(근무시간 중) : +44-20-7227-5500<br>&#038;nbsp; &#038;nbsp;- 긴급연락처(사건사고 등 긴급상황 발생 시, 24시간) : +44-78-7650-6895<br>☞ 영사콜센터(서울, 24시간) : +82-2-3210-0404 / 카카오톡 '외교부 영사콜센터' 친구추가</span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></p><p style="line-height: 1.5;"><span style="font-size: 12pt;"><br></span></p>
+
           </div>
         </div>
       </div>
@@ -1184,9 +1189,9 @@ viewBox= "-125 30 900 900" >
       <div class="card shadow mb-4">
          <div class="card text-center">
         <div class="card-header"style="text-align:left">
-          <h6 class="m-0 fw-bold" style="color:#3b3b3b;font-size: 1.2rem ;font-family: 'twayair';float: left;">백신 접종율</h6>
+          <h6 class="m-0 fw-bold" style="color:#3b3b3b;font-size: 1.2rem ;font-family: 'twayair';float: left;">백신 접종률</h6>
           </div>
-          <div class="card-body"style="height:31.3rem;">
+          <div class="card-body"style="height:30rem;">
             <div>
               <!-- <canvas id="pieChart" style="max-width: 300px;margin: 0 auto;"></canvas>
               <div style="margin-left: 3rem;margin-right: 3rem;">
@@ -1259,11 +1264,11 @@ viewBox= "-125 30 900 900" >
         <!-- Card Header - Dropdown -->
         <div class="card-header"style="text-align:left">
           <h6 class="m-0 fw-bold" style="color:#3b3b3b;font-size: 1.2rem ;font-family: 'twayair';float: left;">
-            변경된 마스크 관련 지침
+            마스크 관련 지침
           </h6>
         </div>
-        <div class="card-body"style="height:31.3rem;">
-          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"style="margin-top:3%">
+        <div class="card-body"style="height:30rem;">
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"style="margin-top:3%;object-fit: cover;">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -1430,8 +1435,8 @@ viewBox= "-125 30 900 900" >
               </ul> -->
           </div>
           <div class="col-lg-4 col-md-6">
-              <h4 class="text-black mb-3">Contacts.</h5>
-              <p class="small text-muted">2018102189 박선홍<br>201810999 최우성<br>201910999 김진환</p>
+              <h4 class="text-black mb-3">contact.</h5>
+              <p class="small text-muted">2018102189 박선홍: 2018102189@gmail.com<br>2018102244 최우성: dntjd991223@naver.com<br>2019102624 김진환: sodlfmag@gmail.com</p>
               
           </div>
       </div>
@@ -1449,7 +1454,7 @@ viewBox= "-125 30 900 900" >
 <script type = "text/javascript" src = "headline_info.json"></script>
 <script src = "js/rolling_headline.js"></script>
 </body>
-<script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+<!-- <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script> -->
 <script type="text/javascript">
 /* EXPANDER MENU */
 const showMenu = (toggleId, navbarId, bodyId) => {
