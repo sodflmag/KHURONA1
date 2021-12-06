@@ -1534,57 +1534,6 @@ for(i=0;i<linkCollapse.length;i++) {
         rotate.classList.toggle('rotate')
     });
 }
-//pie
-var ctxP = document.getElementById("pieChart").getContext('2d');
-        var myPieChart = new Chart(ctxP, {
-          type: 'pie',
-          data: {
-            labels: ["접종","미접종"],
-            datasets: [{
-              data: [829,171],
-              backgroundColor: ["#46BFBD","#F7464A"],
-              hoverBackgroundColor: ["#5AD3D1","#FF5A5E"]
-            }],
-                
-          },
-          options: {
-            responsive: false
-          }
-        });
-
-    var ctxP = document.getElementById("pieChart_1").getContext('2d');
-        var myPieChart = new Chart(ctxP, {
-            type: 'pie',
-          data: {
-            
-            datasets: [{
-              data: [801,199],
-              backgroundColor: ["#46BFBD","#F7464A"],
-              hoverBackgroundColor: ["#5AD3D1","#FF5A5E"]
-            }],
-        },
-          options: {
-            responsive: false
-          }
-        });
-
-    var ctxP = document.getElementById("pieChart_2").getContext('2d');
-        var myPieChart = new Chart(ctxP, {
-            type: 'pie',
-          data: {
-            
-            datasets: [{
-              data: [801,199],
-              backgroundColor: ["#46BFBD","#F7464A"],
-              hoverBackgroundColor: ["#5AD3D1","#FF5A5E"]
-            }],
-        },
-          options: {
-            responsive: false
-          }
-        });
-
-
 
 </script>
 
