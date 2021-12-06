@@ -4,18 +4,11 @@ function m() {
 var fs = require('fs');
 const request = require("request");
 const convert = require('xml-js');
-<<<<<<< HEAD
 const service_key = "AphC66GHAr%2Fsigd0y6R2i5kd0bw6DjE1I86L67QSSX16i4uzVjGh%2FRUINHg54kJIL9ADbF4lS3tCI4MxiRvxVA%3D%3D"
 const requestURL = `http://apis.data.go.kr/1262000/CountryNoticeService/getCountryNoticeList?serviceKey=${service_key}&numOfRows=10&pageNo=1`;
 
 
 // 외교부 국가별 최신 공지사항API 받아오는 구간
-=======
-const requestURL = 'http://apis.data.go.kr/1262000/CountryNoticeService/getCountryNoticeList?serviceKey=AphC66GHAr%2Fsigd0y6R2i5kd0bw6DjE1I86L67QSSX16i4uzVjGh%2FRUINHg54kJIL9ADbF4lS3tCI4MxiRvxVA%3D%3D&numOfRows=10&pageNo=1';
-
-
-// 외교부 최신 공지사항API 받아오는 구간
->>>>>>> feature/css
 function getData() {
     return new Promise(function(resolve, reject) {
         request(requestURL, (err, response, body) => {

@@ -1,10 +1,6 @@
 
 let jsonData2 = JSON.parse(JSON.stringify(Params2));
 const population_kor = 51652704;
-<<<<<<< HEAD
-=======
-
->>>>>>> feature/css
 const _1cha_total = Params2["data"][0]["totalFirstCnt"];
 const _2cha_total = Params2["data"][0]["totalSecondCnt"];
 const _3cha_total = Params2["data"][0]["totalThirdCnt"];
@@ -47,7 +43,6 @@ percentage_2[2].innerHTML = (100 - percentage_3cha).toFixed(1).toString()+"%";
 
 percentage_2[0].style.width = (100 - percentage_1cha).toFixed(1).toString()+"%";
 percentage_2[1].style.width = (100 - percentage_2cha).toFixed(1).toString()+"%";
-<<<<<<< HEAD
 percentage_2[2].style.width =  (100 - percentage_3cha).toFixed(1).toString()+"%";
 
 
@@ -56,6 +51,3 @@ let x = document.querySelector("#update-date");
 let temp = "업데이트 날짜: " + Params2['data'][0]['baseDate'];
 temp = temp.slice(0, temp.indexOf('00:00:00'));
 x.innerHTML = temp;
-=======
-percentage_2[2].style.width =  (100 - percentage_3cha).toFixed(1).toString()+"%";
->>>>>>> feature/css

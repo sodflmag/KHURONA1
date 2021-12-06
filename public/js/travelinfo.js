@@ -13,7 +13,6 @@ function getAPIInfo(AREACODE, CONTENT_TYPE_ID) {
         xhr.onreadystatechange = function () {
             if (this.readyState == 4) {
                 jsonFile = JSON.parse(this.responseText);
-                console.log(this.cookies);
                 resolve(jsonFile);
             }
         };
