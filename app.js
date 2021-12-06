@@ -22,7 +22,7 @@ let endCreateDt = `${year}${month}${day}`;
 
 // month, date의 경우 10보다 작아지는 경우 앞에 0을 붙여줘야 정상적인 URL 생성이 가능함.
 const url = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?";
-const key = "680%2FgyPOpacfjvTYIO1H2rHe4F%2FfdZV1jVBWfNkVZt8XL9zsYRp%2BbIO2%2FGwKolSMM6RcViMLiPgq4S%2BQJhROFQ%3D%3D";
+const service_key1 = "680%2FgyPOpacfjvTYIO1H2rHe4F%2FfdZV1jVBWfNkVZt8XL9zsYRp%2BbIO2%2FGwKolSMM6RcViMLiPgq4S%2BQJhROFQ%3D%3D";
 const pageNo = "2";
 const numofRows = "10";
 
@@ -37,13 +37,13 @@ if(0<= date.getHours() && date.getHours() <= 9) {
 }
 
 
-let requestURL = `${url}serviceKey=${key}&pageNo=${pageNo}&numoFRows=${numofRows}&startCreateDt=${startCreateDt}&endCreateDt=${endCreateDt}`;
+let requestURL = `${url}serviceKey=${service_key1}&pageNo=${pageNo}&numoFRows=${numofRows}&startCreateDt=${startCreateDt}&endCreateDt=${endCreateDt}`;
 
 // 선언부분 종료 -------------------------------------------------------------------
 
 
 
-// 코로나 확진자 수 API 받아오는 구간
+// 코로나 확진자 수, 외교부 공지사항 API 받아오는 구간
 function getData() {
     return new Promise(function(resolve, reject) {
         request(requestURL, (err, response, body) => {
@@ -62,10 +62,10 @@ let values = [];
 
 function notification() {
     const url = "http://apis.data.go.kr/1262000/NoticeService2/getNoticeList2?";
-    const key = "AphC66GHAr%2Fsigd0y6R2i5kd0bw6DjE1I86L67QSSX16i4uzVjGh%2FRUINHg54kJIL9ADbF4lS3tCI4MxiRvxVA%3D%3D";
+    const service_key2 = "AphC66GHAr%2Fsigd0y6R2i5kd0bw6DjE1I86L67QSSX16i4uzVjGh%2FRUINHg54kJIL9ADbF4lS3tCI4MxiRvxVA%3D%3D";
     const pageNo = "1";
     const numofRows = "1";
-    const requestURL = `${url}serviceKey=${key}&pageNo=${pageNo}&numoFRows=${numofRows}&returnType=XML`;
+    const requestURL = `${url}serviceKey=${service_key2}&pageNo=${pageNo}&numoFRows=${numofRows}&returnType=XML`;
     return new Promise(function(resolve, reject) {
         request(requestURL, (err, response, body) => {
             if(response) {
