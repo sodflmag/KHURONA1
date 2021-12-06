@@ -1,7 +1,6 @@
 
 let jsonData2 = JSON.parse(JSON.stringify(Params2));
 const population_kor = 51652704;
-
 const _1cha_total = Params2["data"][0]["totalFirstCnt"];
 const _2cha_total = Params2["data"][0]["totalSecondCnt"];
 const _3cha_total = Params2["data"][0]["totalThirdCnt"];

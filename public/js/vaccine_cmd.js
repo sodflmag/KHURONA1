@@ -12,6 +12,8 @@ function main() {
             resolve();
         }
 
+        else {
+
 let exec = require('child_process').exec
 // month, date의 경우 10보다 작아지는 경우 앞에 0을 붙여줘야 정상적인 URL 생성이 가능함.
 
@@ -23,7 +25,6 @@ let exec = require('child_process').exec
 	console.log(out);
 });
 resolve();
-})
-
+}})
 }
 module.exports = main;

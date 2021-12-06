@@ -8,12 +8,9 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const request = require("request");
 const convert = require("xml-js");
-<<<<<<< HEAD
 const xml2js = require('xml2js');
 const vaccine = require("./public/js/vaccine_cmd.js"); // 백신정보 모듈화 
 const rolling = require("./public/js/headline_api.js"); // 헤드라인 모듈화
-=======
->>>>>>> ee378aba7c903afc42a31fcd12ebc2ee9eb588e6
 const fs = require('fs');   
 const date = new Date();
 
@@ -43,8 +40,6 @@ if(0<= date.getHours() && date.getHours() <= 9) {
 let requestURL = `${url}serviceKey=${key}&pageNo=${pageNo}&numoFRows=${numofRows}&startCreateDt=${startCreateDt}&endCreateDt=${endCreateDt}`;
 
 // 선언부분 종료 -------------------------------------------------------------------
-
-
 
 
 
@@ -85,7 +80,6 @@ function replaceAll(str, searchStr, replaceStr) {
     return str.split(searchStr).join(replaceStr);
   }
 // json 형식의 파일 받아옴.
-<<<<<<< HEAD
 notification().then(function(data1) {
     // console.log(data1);
     const obj = JSON.parse(data1);
@@ -102,19 +96,20 @@ notification().then(function(data1) {
         fs.writeFile("public/test_vaccine.json", "Params2 =" + data2, (err) => console.log(err));
     })
 
-=======
-getData().then(function(data) {
->>>>>>> ee378aba7c903afc42a31fcd12ebc2ee9eb588e6
     return new Promise(function(resolve, reject) {
         const obj = JSON.parse(data);
     for (x of obj["response"]["body"]["items"]["item"]) {
         const areaName = x['gubun']['_text'];
         const areaCovidCount = x['localOccCnt']['_text'];
+        const areaAccumu = x['defCnt']['_text'];
         result_arr.push({'areaName' : areaName, 
             'areaCovidcount' : areaCovidCount,
+            'areaAccumu' : areaAccumu,
     })
 }
-
+    result_arr.unshift(obj["response"]["body"]["items"]["item"][18]['isolClearCnt']);
+    result_arr.unshift(obj["response"]["body"]["items"]["item"][18]['overFlowCnt']);
+    result_arr.unshift(obj["response"]["body"]["items"]["item"][18]['deathCnt']);
     resolve(result_arr); // result_arr 객체 형태로 지역 별 정보 저장.
     reject(new Error("failed"));
     }
@@ -146,8 +141,6 @@ getData().then(function(data) {
       const getJson = ParseAndMakeJson(titleList); // JSON 형식으로 크롤링 정보를 저장했음.
       const StringJson = JSON.stringify(getJson);
       fs.writeFileSync('public/crawling-info.json', "Params = " + StringJson);
-
-
        // 1번부터 서울, 17번 제주까지.
        
 
@@ -196,7 +189,6 @@ getData().then(function(data) {
                             distancingval15: result_arr[15].areaCovidcount,
                             distancingval16: result_arr[16].areaCovidcount,
                             distancingval17: result_arr[17].areaCovidcount,
-<<<<<<< HEAD
                             date : `${year}.${month}.${day}`,
                             accumu_1: result_arr[1].areaAccumu,
                             accumu_2: result_arr[2].areaAccumu,
@@ -224,14 +216,6 @@ getData().then(function(data) {
 });
 });
 }))))
-=======
-                            date : `${year}.${month}.${day}`
-                            
-});
-});
-})
-
->>>>>>> ee378aba7c903afc42a31fcd12ebc2ee9eb588e6
 
 
 
