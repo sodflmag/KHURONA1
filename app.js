@@ -116,8 +116,9 @@ notification().then(function(data1) {
 
     )}).then((result) => {
         result = result.reverse();
+        // console.log(result);
         result_arr = result;
-
+        // console.log(result_arr);
 
         return new Promise(function(resolve, reject) {
             {

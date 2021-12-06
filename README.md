@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # About the Project
 
 > ## ***"코로나로 지친 당신, 어디로 떠나볼래요?"✈️***
@@ -147,3 +148,15 @@ Pull request는 가능한 빠른 시일 내에 확인하도록 하겠습니다.<
 - **김진환** - sodlfmag@gmail.com
 - **박선홍** - 2018102189@gmail.com
 - **최우성** - dntjd991223@naver.com
+=======
+<h1>About the Project</h1>
+<h1>Getting Started(Installation)</h1>
+<h1>Usage</h1>
+<h1>Roadmap</h1>
+<h1>Contributing</h1>
+<h1>License</h1>
+<h1>Contact</h1>
+김진환: 01067308213 - sodlfmag@gmail.com <br>
+박선홍: 01049407358 - 2018102189@gmail.com <br>
+최우성: 01099376771 - dntjd991223@naver.com <br>
+>>>>>>> feature/css

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel = "stylesheet" href = "style.css">
+  </head>
+
+<body>
+  <div class="rolling_box">
+    <ul id ="rolling_box">
+      <li class="card_sliding" id ="first"><p></p></li>
+      <li class="" id ="second"><p></p></li>
+      <li class="" id ="third"><p></p></li>
+    </ul>
+  </div>
+  <!-- <script type = "text/javascript" src="headline_info.json"></script> -->
+  <script type="text/javascript" src = "headline_info.json">
+  let mydata = JSON.parse(Data);
+  console(mydata);
+  </script>
+  
+  <script>
+    conslole.log(rolling);
+  </script>
+  <script> 
+    let rollingData = [ '파키스탄 카라치 코랑기 지역 방문 자제 및 신변안전 유의',
+                        '영국 테러경보 상향 조정(11.15.)에 따른 안전 주의',
+                        '영국 유학생 납치 빙자 보이스피싱 사기',
+                        '전 국가·지역 해외여행에 대한 특별여행주의보 연장',
+                        '에티오피아 전 지역 여행경보 3단계(출국권고)로 상향 조정',
+                        '에티오피아 국가비상사태(State of Emergency) 선포(11.2.) 관련 안전 공지',
+                        '수단 전 지역 여행경보 3단계(출국권고)로 상향 조정',
+                        '수단 정세불안 관련 안전공지',
+                        '여행경보의 단계별 위험 수준에 관한 고시 일부개정',
+                        '전 국가·지역 해외여행에 대한 특별여행주의보 재발령'
+                      ]    // 롤링할 데이터 입력 개수 제한 x
+
+    let timer = 2000 // 롤링되는 주기 (1000 => 1초)
+
+    let first = document.getElementById('first'),
+        second = document.getElementById('second'),
+        third = document.getElementById('third')
+    let move = 2
+    let dataCnt = 1
+    let listCnt = 1
+
+
+    first.children[0].innerHTML = rollingData[0]
+
+    setInterval(() => {
+        if(move == 2){
+            first.classList.remove('card_sliding')
+            first.classList.add('card_sliding_after')
+
+            second.classList.remove('card_sliding_after')
+            second.classList.add('card_sliding')
+
+            third.classList.remove('card_sliding_after')
+            third.classList.remove('card_sliding')
+
+            move = 0
+        } else if (move == 1){
+            first.classList.remove('card_sliding_after')
+            first.classList.add('card_sliding')
+
+            second.classList.remove('card_sliding_after')
+            second.classList.remove('card_sliding')
+
+            third.classList.remove('card_sliding')
+            third.classList.add('card_sliding_after')
+
+            move = 2
+        } else if (move == 0) {
+            first.classList.remove('card_sliding_after')
+            first.classList.remove('card_sliding')
+
+            second.classList.remove('card_sliding')
+            second.classList.add('card_sliding_after')
+
+            third.classList.remove('card_sliding_after')
+            third.classList.add('card_sliding')
+
+            move = 1
+        }
+        
+        if(dataCnt < (rollingData.length - 1)) {
+            document.getElementById('rolling_box').children[listCnt].children[0].innerHTML = rollingData[dataCnt]
+                dataCnt++
+        } else if(dataCnt == rollingData.length - 1) {
+            document.getElementById('rolling_box').children[listCnt].children[0].innerHTML = rollingData[dataCnt]
+            dataCnt = 0
+        }
+
+        if(listCnt < 2) {
+            listCnt++
+        } else if (listCnt == 2) {
+            listCnt = 0
+        }
+
+        console.log(listCnt)
+    }, timer);
+
+
+</script>
+
+</body>
+</html>
