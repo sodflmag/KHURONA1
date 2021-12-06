@@ -171,7 +171,7 @@ notification().then(function(data1) {
         str += values[v]['contents'];
         str += '\n\n\n';
     }
-
+console.log(str);
  app.get('/', (req, res) => {
     res.render('CSS_body_carousel_rev2.ejs', {distancingval1: result_arr[1].areaCovidcount,
                             distancingval2: result_arr[2].areaCovidcount,
