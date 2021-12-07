@@ -73,7 +73,7 @@
   /* left: 1370px;
   bottom: 700px; */
   left: 97%;
-  bottom: 100%;
+  bottom: 95%;
   outline: none;
   background-color:transparent;
   border: 0;
@@ -86,7 +86,7 @@ content: "\00d7";
 }
 
 .hidden_close:hover {
-color: white;
+color: rgb(248, 135, 135);
 }
 
 
