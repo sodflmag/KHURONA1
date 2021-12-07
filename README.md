@@ -1,11 +1,48 @@
-<<<<<<< HEAD
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="/uploads/fccd0ecf31280b34aa9c472824515c45/khulogo.svg" alt="Logo" width="200">
+  </a>
+
+  <h3 align="center">KHURONA</h3>
+
+  <p align="center">
+    코로나19 최신 안전정보와 함께 멋진 여행지를 추천해 드립니다.
+    <br />
+    <a href="http://khuhub.khu.ac.kr/corona_info_map/corona_info_map"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="http://khuhub.khu.ac.kr/corona_info_map/corona_info_map">View Demo</a>
+    ·
+    <a href="http://khuhub.khu.ac.kr/corona_info_map/corona_info_map/issues">Report Bug</a>
+    ·
+    <a href="http://khuhub.khu.ac.kr/corona_info_map/corona_info_map/issues">Request Feature</a>
+  </p>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#licenseapi">License(API)</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+
 # About the Project
+<br>
 
 > ## ***"코로나로 지친 당신, 어디로 떠나볼래요?"✈️***
 
  KHURONA가<br>
  오랜 코로나 상황에 지친 당신에게 <br>
- 안전정보와 함께 멋진 여행지를 추천해 드릴게요 ☑️✅✔️🗺️🧳✈️<br>
+ 안전정보와 함께 멋진 여행지를 추천해 드릴게요 ️🧳️<br>
 
  - [ ] -> ***로고?***
  - [ ] -> ***목차***
@@ -29,6 +66,7 @@
 - 원하는 지역을 선택하면 테마별  여행지 랜덤추천
 
 #### 해외 정보 제공
+
 - 해외 최신 안전 소식을 헤드라인으로 제공
 - 출국 전 참고해야 할 외교부 최신 공지사항 제공
 
@@ -94,11 +132,12 @@ app.js를 실행합니다.
 이제 Chrome browser에서 http://localhost:23023/ 으로 접속해 테스트할 수 있습니다.
 
 # Usage
+
 데모, 웹페이지 스크린샷, 코드 예시
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
 # Roadmap
-- 웹페이지 틀 작성 -> ***이건 빼는게 나으려나?***
+
 - 대한민국 지도 이미지로 반응형(팝업) 구조 구현
 - 코로나 관련 통계 API로 수치 정보 제공
 - 선별진료소 검색기능 구현
@@ -145,18 +184,8 @@ Pull request는 가능한 빠른 시일 내에 확인하도록 하겠습니다.<
  - [ ] ***-> API말고 우리의 이용 라이센스? (ex MIT 라이센스)***
 
 # Contact
+
 - **김진환** - sodlfmag@gmail.com
 - **박선홍** - 2018102189@gmail.com
 - **최우성** - dntjd991223@naver.com
-=======
-<h1>About the Project</h1>
-<h1>Getting Started(Installation)</h1>
-<h1>Usage</h1>
-<h1>Roadmap</h1>
-<h1>Contributing</h1>
-<h1>License</h1>
-<h1>Contact</h1>
-김진환: 01067308213 - sodlfmag@gmail.com <br>
-박선홍: 01049407358 - 2018102189@gmail.com <br>
-최우성: 01099376771 - dntjd991223@naver.com <br>
->>>>>>> feature/css
+
