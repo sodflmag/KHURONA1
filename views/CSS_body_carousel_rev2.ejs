@@ -92,6 +92,11 @@
     font-family: 'NanumSquareRound';
     font-size: 1rem;
   }
+ td{
+  padding-left: 10px;
+  text-align: right;
+  
+ }
 /* GOOGLE FONTS */
 
 /* VARIABLES CSS */
@@ -174,14 +179,16 @@ a {
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
+    
 }
 
 .nav__brand {
     display: grid;
-    grid-template-columns: max-content max-content;
+    grid-template-columns: max-content max-content ;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
+    
 }
 
 .nav__toggle {
@@ -197,7 +204,8 @@ a {
 
 .nav__link {
     display: grid;
-    grid-template-columns: max-content max-content;
+    grid-template-columns: 20px max-content; 
+    grid-template-rows: max-content max-content;
     align-items: center;
     column-gap: .75rem;
     padding: .75rem;
@@ -248,7 +256,7 @@ a {
 }
 
 .collapse__link {
-    justify-self: flex-end;
+    justify-self: var(--z-fixed);
     transition: .5;
     
 }
@@ -278,7 +286,7 @@ a {
 
 /* Rotate icon */
 .rotate {
-    transform: rotate(180deg);
+    /* transform: rotate(180deg); */
     transition: .5s;
 }
 
@@ -404,12 +412,24 @@ footer#body-pd{
                         <span class="nav_name">마스크 착용지침</span>
                   </a> -->
                   <hr class="sidebar-divider d-none d-md-block">
-                  <div href="#" class="nav__link" style="grid-template-columns: 20px max-content 1fr; white-space:nowrap;">
-                    <ion-icon name="logo-chrome" class="nav__icon"></ion-icon>
-                    <span class="nav_name">각종 링크들</span>
+                  
+                  <div href="#" class="nav__link" style="grid-template-columns: 20px content 1fr; white-space:nowrap;">
+                    <!-- <button type="button" class="btn" data-bs-toggle="collapse" data-bs-target="#demo">각종 링크들</button>
+                      <div id="demo" class="collapse">
+                        <a href="https://kosis.kr/covid/covid_index.do" class="collapse__sublink">코로나 통계청</a><br>
+                        <a href="http://ncov.mohw.go.kr/" class="collapse__sublink">코로나 Hub</a><br>
+                        <a href="http://www.mohw.go.kr/react/index.jsp" class="collapse__sublink">보건복지부</a><br>
+                        <a href="https://www.0404.go.kr/dev/main.mofa" class="collapse__sublink">외교부 해외안전여행</a><br>
+                        <a href="https://www.skyscanner.co.kr/" class="collapse__sublink">SkyScanner</a><br>
+                        <a href="https://www.airbnb.co.kr/" class="collapse__sublink">AirBnB</a><br>
 
-                    <ion-icon name="chevron-down-outline" class="collapse__link "></ion-icon>
-
+                      </div> -->
+                      
+                      <!-- <ion-icon name="logo-chrome" class="nav__icon"></ion-icon> -->
+                      <ion-icon name="logo-chrome" class="nav__icon"></ion-icon>
+                    <span class="collapse__link nav_name">&nbsp; 각종 링크들</span>
+                    <!-- <ion-icon name="chevron-down-outline" class="collapse__link "></ion-icon> -->
+                        
                     <ul class="collapse__menu">
                         <a href="https://kosis.kr/covid/covid_index.do" class="collapse__sublink"style="position:relative;left:7%">코로나 통계청</a><br>
                         <a href="http://ncov.mohw.go.kr/" class="collapse__sublink"style="position:relative;left:7%">코로나 Hub</a><br>
@@ -1027,89 +1047,89 @@ viewBox= "-125 30 900 900" >
             <tbody>
               <tr>
                 <th scope="row">서울시</th>
-                <td><%=accumu_1%></td>
+                <td><%= accumu_1%></td>
                 <td><%=distancingval1%></td>
                 
               </tr>
               <tr>
                 <th scope="row">부산시</th>
-                <td><%=accumu_2%></td>
-                <td><%=distancingval2%></td>
+                <td><%= accumu_2%></td>
+                <td><%= distancingval2 %></td>
               </tr>
               <tr>
                 <th scope="row">대구시</th>
-                <td><%=accumu_3%></td>
-                <td><%=distancingval3%></td>
+                <td><%= accumu_3%></td>
+                <td><%= distancingval3 %></td>
               </tr>
               <tr>
                 <th scope="row">인천시</th>
-                <td><%=accumu_4%></td>
-                <td><%=distancingval4%></td>
+                <td><%= accumu_4%></td>
+                <td><%= distancingval4 %></td>
               </tr>
               <tr>
                 <th scope="row">광주시</th>
-                <td><%=accumu_5%></td>
-                <td><%=distancingval5%></td>
+                <td><%= accumu_5%></td>
+                <td><%= distancingval5 %></td>
               </tr>
               <tr>
                 <th scope="row">대전시</th>
-                <td><%=accumu_6%></td>
-                <td><%=distancingval6%></td>
+                <td><%= accumu_6%></td>
+                <td><%= distancingval6 %></td>
               </tr>
               <tr>
                 <th scope="row">울산시</th>
-                <td><%=accumu_7%></td>
-                <td><%=distancingval7%></td>
+                <td><%= accumu_7%></td>
+                <td><%= distancingval7 %></td>
               </tr>
               <tr>
                 <th scope="row">세종시</th>
-                <td><%=accumu_8%></td>
-                <td><%=distancingval8%></td>
+                <td><%= accumu_8%></td>
+                <td><%= distancingval8 %></td>
               </tr>
               <tr>
                 <th scope="row">경기도</th>
-                <td><%=accumu_9%></td>
-                <td><%=distancingval9%></td>
+                <td><%= accumu_9%></td>
+                <td><%= distancingval9 %></td>
               </tr>
               <tr>
                 <th scope="row">강원도</th>
-                <td><%=accumu_10%></td>
-                <td><%=distancingval10%></td>
+                <td><%= accumu_10%></td>
+                <td><%= distancingval10 %></td>
               </tr>
               <tr>
                 <th scope="row">충청북도</th>
-                <td><%=accumu_11%></td>
-                <td><%=distancingval11%></td>
+                <td><%= accumu_11%></td>
+                <td><%= distancingval11 %></td>
               </tr>
               <tr>
                 <th scope="row">충청남도</th>
-                <td><%=accumu_12%></td>
-                <td><%=distancingval12%></td>
+                <td><%= accumu_12%></td>
+                <td><%= distancingval12 %></td>
               </tr>
               <tr>
                 <th scope="row">전라북도</th>
-                <td><%=accumu_13%></td>
-                <td><%=distancingval13%></td>
+                <td><%= accumu_13%></td>
+                <td><%= distancingval13 %></td>
               </tr>
               <tr>
                 <th scope="row">전라남도</th>
-                <td><%=accumu_14%></td>
-                <td><%=distancingval14%></td>
+                <td><%= accumu_14%></td>
+                <td><%= distancingval14 %></td>
               </tr>
               <tr>
                 <th scope="row">경상북도</th>
-                <td><%=accumu_15%></td>
-                <td><%=distancingval15%></td>
+                <td><%= accumu_15%></td>
+                <td><%= distancingval15 %></td>
               </tr>
               <tr>
                 <th scope="row">경상남도</th>
-                <td><%=accumu_16%></td>
-                <td><%=distancingval16%></td>
+                <td><%= accumu_16%></td>
+                <td><%= distancingval16 %></td>
               </tr>
               <tr>
                 <th scope="row">제주도</th>
-                <td><%=accumu_17%></td>
-                <td><%=distancingval17%></td>
+                <td><%= accumu_17%></td>
+                <td><%= distancingval17%></td>
               </tr>
 
 
@@ -1478,6 +1498,9 @@ for(i=0;i<linkCollapse.length;i++) {
         rotate.classList.toggle('rotate')
     });
 }
+
+
+
 
 </script>
 
