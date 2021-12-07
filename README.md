@@ -1,3 +1,4 @@
+
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -22,17 +23,21 @@
 </div>
 
 <!-- TABLE OF CONTENTS -->
+
 <details>
   <summary>Table of Contents</summary>
+  
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#licenseapi">License(API)</a></li>
+    <li><a href="#data-source">Data source</a></li>
+    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
+  
 </details>
 
 # About the Project
@@ -44,13 +49,7 @@
  오랜 코로나 상황에 지친 당신에게 <br>
  안전정보와 함께 멋진 여행지를 추천해 드릴게요 ️🧳️<br>
 
- - [ ] -> ***로고?***
- - [ ] -> ***목차***
- - [ ] -> ***내용 수정필요***
-
 ## 핵심기능
-
- - [ ] ***-> 페이지 캡쳐해서 페이지 설명이 있으면 좋을듯***
 
 #### 코로나 정보 제공
 
@@ -78,13 +77,8 @@
 
 - Compiler: VS Code
 
-- Browser Support: chrome O(Latest), internet Explorer: X
-***
+- Browser Support: chrome(Latest)✅
 
- - [ ] -> ***컴파일러, 	브라우저 서포트 이미지?***
- - [ ] -> ***Architecture 이미지?***
-
-***
 #### Installation
 
  1. Git clone
@@ -111,6 +105,10 @@ VS Code 터미널에서 dependency modules를 설치해줍니다.
 
 #### 3. API Key 발급 & 입력
 
+> 본 저작물은 [공공데이터포털](https://www.data.go.kr/index.do)에서 20-21년 작성하여 공공누리 
+> 제 1유형으로 개방 또는 범위 제약이 없는 저작물 5건을 이용하였으며, <br> 해당 저작물은 모두 무료로 다운로드 받으실 수
+> 있습니다. 상세정보는 [Data source](#data-source)를 참고해 주세요.<br>
+
 <img src="/uploads/fcf59e28decfede2f05f7d3ea714ce8f/API_request.png" width="1000">
 <br>
 <img src="/uploads/d1bf1d2c82d1a148bc0127aefc69f67d/API_Key.png" width="1000">
@@ -123,7 +121,7 @@ API Key를 발급 받아`/corona_info_map/public` 디렉토리에 위치한
 const service_key = 'ENTER YOUR API KEY';
 ```
 에 5개의 API를 입력하면 됩니다.
-상세 입력 위치는 [License(API)](#licenseapi)를 참고해 주세요.
+상세 입력 위치는 [Data source](#data-source)를 참고해 주세요.
 
 <br>
 
@@ -159,7 +157,7 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 Contribution은 언제나 환영입니다! 🙌 <br>
 
-KHURONA 프로젝트에 대한 개선 제안이 있다면 아래를 통해 Contribution에 참여해 주세요.<br>
+KHURONA 프로젝트에 대한 개선 제안이 있다면 아래를 통해 Contribution에 참여해 주세요.<hr>
 
 1. Project를 Fork합니다.
 2. 개선 기능에 대한 새 branch를 생성합니다.`git branch featrue/<개선 기능 이름>`
@@ -172,7 +170,7 @@ Pull request는 가능한 빠른 시일 내에 확인하도록 하겠습니다.<
 기타 문의사항은 📧[Contact](#contact) 으로 메일 부탁드립니다.<br>
 
 
-# License(API)
+# Data source
 
 > **파일명 -> 변수명**
 
@@ -181,8 +179,14 @@ Pull request는 가능한 빠른 시일 내에 확인하도록 하겠습니다.<
 3. **[보건복지부 코로나19 시·도발생 현황](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15043378)** - `app.js -> service_key1`  
 4. **[코로나19 예방접종 통계 데이터 조회 서비스](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15077756)** - `vaccine_cmd.js -> service_key`
 5. **[외교부_공지사항](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15075341)** - `app.js -> service_key2`
- - [ ] ***-> 세부 지역 크롤링, 선별진료소 자료 ?***
- - [ ] ***-> API말고 우리의 이용 라이센스? (ex MIT 라이센스)***
+
+#### Etc(Non API data)<br>
+1. 크롤링 - [**세부 지역별 코로나 확진자 현황**](http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=13&ncvContSeq=&contSeq=&board_id=&gubun)
+2. xls 파일 다운로드 - [**보건복지수 전국 선별진료소 정보**](https://www.mohw.go.kr/react/popup_200128_3.html)
+
+# License
+KHURONA 프로젝트는 MIT 라이센스에 따라 배포됩니다.<br>
+자세한 내용은 `LICENSE.txt`를 참고해 주세요.
 
 # Contact
 
