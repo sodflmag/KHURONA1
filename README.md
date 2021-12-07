@@ -111,13 +111,14 @@ VS Code 터미널에서 dependency modules를 설치해줍니다.
 
 #### 3. API Key 발급 & 입력
 
-![enter image description here](https://www.ekr.or.kr/images/sub/data_003.jpg)
- - [ ] **최신 사진 커밋에 추가해서 링크 연결**
- - [ ] **API 인증 키 사진 추가**
- 
+<img src="/uploads/fcf59e28decfede2f05f7d3ea714ce8f/API_request.png" width="1000">
+<br>
+<img src="/uploads/d1bf1d2c82d1a148bc0127aefc69f67d/API_Key.png" width="1000">
+ <br>
  
 API Key를 발급 받아`/corona_info_map/public` 디렉토리에 위치한 
   `headline.js` `travelinfo.js` `vaccine.js` 와 `app.js` 의
+  
 ```javascript
 const service_key = 'ENTER YOUR API KEY';
 ```
