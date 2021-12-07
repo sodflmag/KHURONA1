@@ -1024,14 +1024,19 @@ viewBox= "-125 30 900 900" >
                 
                 <th scope="col">확진환자</th>
                 <th scope="col">사망자</th>
-                <th scope="col">기타격리</th>
-                
+                <th scope="col">해외유입</th>
+                <!-- <th scope="col">확진환자</th>
+                <th scope="col">사망자</th>
+                <th scope="col">해외유입</th> -->
 
               </tr>
               <tr>
-                <th scope="row"><%=accumu_total%><br><p style="color: red;">신규: <%=new_total%></p></th>
-                <th scope="row"style="padding: 20px;"><%=die_accumu%></th>
-                <th scope="row"><%=isol%> <br>해외유입: <%=foreign%> </th>
+                <th scope="row"><h id="total"style="padding: 10px"></h><br><p style="color: red;">신규: <h id="new"></h></p></th>
+                <th scope="row"style="padding: 20px;"><h id="die"></h></th>
+                <th scope="row"style="padding: 20px"> <h id="foreign"></h> </th>
+                <!-- <th scope="row"><h id="total"></h><br><p style="color: red;">신규: <h id="new"></h></p></th>
+                <th scope="row"style="padding: 20px;"><h id="die"></h></th>
+                <th scope="row"><h id="foriegn"></h> </th> -->
               </tr>
               </tbody>
           </table>
@@ -1040,96 +1045,97 @@ viewBox= "-125 30 900 900" >
               <tr>
                 
                 <th scope="col"style="background-color:#CDFFFC">지역</th>
-                <th scope="col"style="background-color:#CDFFFC;white-space:  nowrap;">누적확진자</th>
-                <th scope="col"style="background-color:#CDFFFC">신규확진자<ion-icon name="caret-up-outline"style="color:red;"></ion-icon></th>
+                <th scope="col"style="background-color:#CDFFFC;">누적확진자</th>
+                <th scope="col"style="background-color:#CDFFFC;"style="max-width:10px">신규확진자</th>
+                <!-- <ion-icon name="caret-up-outline"style="color:red;"></ion-icon> -->
               </tr>
             </thead>
-            <tbody>
+            <tbody style="font-weight:bold;">
               <tr>
                 <th scope="row">서울시</th>
-                <td><%= accumu_1%></td>
-                <td><%=distancingval1%></td>
+                <td ><h id="a1"></h></td>
+                <td ><h id="d1"></h></td>
                 
               </tr>
               <tr>
                 <th scope="row">부산시</th>
-                <td><%= accumu_2%></td>
-                <td><%= distancingval2 %></td>
+                <td><h id="a2"></h></td>
+                <td><h id="d2"></h></td>
               </tr>
               <tr>
                 <th scope="row">대구시</th>
-                <td><%= accumu_3%></td>
-                <td><%= distancingval3 %></td>
+                <td><h id="a3"></h></td>
+                <td><h id="d3"></h></td>
               </tr>
               <tr>
                 <th scope="row">인천시</th>
-                <td><%= accumu_4%></td>
-                <td><%= distancingval4 %></td>
+                <td><h id="a4"></h></td>
+                <td><h id="d4"></h></td>
               </tr>
               <tr>
                 <th scope="row">광주시</th>
-                <td><%= accumu_5%></td>
-                <td><%= distancingval5 %></td>
+                <td><h id="a5"></h></td>
+                <td><h id="d5"></h></td>
               </tr>
               <tr>
                 <th scope="row">대전시</th>
-                <td><%= accumu_6%></td>
-                <td><%= distancingval6 %></td>
+                <td><h id="a6"></h></td>
+                <td><h id="d6"></h></td>
               </tr>
               <tr>
                 <th scope="row">울산시</th>
-                <td><%= accumu_7%></td>
-                <td><%= distancingval7 %></td>
+                <td><h id="a7"></h></td>
+                <td><h id="d7"></h></td>
               </tr>
               <tr>
                 <th scope="row">세종시</th>
-                <td><%= accumu_8%></td>
-                <td><%= distancingval8 %></td>
+                <td><h id="a8"></h></td>
+                <td><h id="d8"></h></td>
               </tr>
               <tr>
                 <th scope="row">경기도</th>
-                <td><%= accumu_9%></td>
-                <td><%= distancingval9 %></td>
+                <td><h id="a9"></h></td>
+                <td><h id="d9"></h></td>
               </tr>
               <tr>
                 <th scope="row">강원도</th>
-                <td><%= accumu_10%></td>
-                <td><%= distancingval10 %></td>
+                <td><h id="a10"></h></td>
+                <td><h id="d10"></h></td>
               </tr>
               <tr>
                 <th scope="row">충청북도</th>
-                <td><%= accumu_11%></td>
-                <td><%= distancingval11 %></td>
+                <td><h id="a11"></h></td>
+                <td><h id="d11"></h></td>
               </tr>
               <tr>
                 <th scope="row">충청남도</th>
-                <td><%= accumu_12%></td>
-                <td><%= distancingval12 %></td>
+                <td><h id="a12"></h></td>
+                <td><h id="d12"></h></td>
               </tr>
               <tr>
                 <th scope="row">전라북도</th>
-                <td><%= accumu_13%></td>
-                <td><%= distancingval13 %></td>
+                <td><h id="a13"></h></td>
+                <td><h id="d13"></h></td>
               </tr>
               <tr>
                 <th scope="row">전라남도</th>
-                <td><%= accumu_14%></td>
-                <td><%= distancingval14 %></td>
+                <td><h id="a14"></h></td>
+                <td><h id="d14"></h></td>
               </tr>
               <tr>
                 <th scope="row">경상북도</th>
-                <td><%= accumu_15%></td>
-                <td><%= distancingval15 %></td>
+                <td><h id="a15"></h></td>
+                <td><h id="d15"></h></td>
               </tr>
               <tr>
                 <th scope="row">경상남도</th>
-                <td><%= accumu_16%></td>
-                <td><%= distancingval16 %></td>
+                <td><h id="a16"></h></td>
+                <td><h id="d16"></h></td>
               </tr>
               <tr>
                 <th scope="row">제주도</th>
-                <td><%= accumu_17%></td>
-                <td><%= distancingval17%></td>
+                <td><h id="a17"></h></td>
+                <td><h id="d17"></h></td>
               </tr>
 
 
@@ -1500,6 +1506,51 @@ for(i=0;i<linkCollapse.length;i++) {
 }
 
 
+
+
+const numberWithCommas  = (x) => {
+   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+document.querySelector('#total').innerText = numberWithCommas( <%=accumu_total%> );
+document.querySelector('#new').innerText = numberWithCommas( <%=new_total%> );
+document.querySelector('#die').innerText = numberWithCommas( <%=isol%> );
+document.querySelector('#foreign').innerText = numberWithCommas( <%=foreign%> );
+
+document.querySelector('#a1').innerText = numberWithCommas( <%=accumu_1%> );
+document.querySelector('#a2').innerText = numberWithCommas( <%=accumu_2%> );
+document.querySelector('#a3').innerText = numberWithCommas( <%=accumu_3%> );
+document.querySelector('#a4').innerText = numberWithCommas( <%=accumu_4%> );
+document.querySelector('#a5').innerText = numberWithCommas( <%=accumu_5%> );
+document.querySelector('#a6').innerText = numberWithCommas( <%=accumu_6%> );
+document.querySelector('#a7').innerText = numberWithCommas( <%=accumu_7%> );
+document.querySelector('#a8').innerText = numberWithCommas( <%=accumu_8%> );
+document.querySelector('#a9').innerText = numberWithCommas( <%=accumu_9%> );
+document.querySelector('#a10').innerText = numberWithCommas( <%=accumu_10%> );
+document.querySelector('#a11').innerText = numberWithCommas( <%=accumu_11%> );
+document.querySelector('#a12').innerText = numberWithCommas( <%=accumu_12%> );
+document.querySelector('#a13').innerText = numberWithCommas( <%=accumu_13%> );
+document.querySelector('#a14').innerText = numberWithCommas( <%=accumu_14%> );
+document.querySelector('#a15').innerText = numberWithCommas( <%=accumu_15%> );
+document.querySelector('#a16').innerText = numberWithCommas( <%=accumu_16%> );
+document.querySelector('#a17').innerText = numberWithCommas( <%=accumu_17%> );
+
+document.querySelector('#d1').innerText = numberWithCommas( <%=distancingval1%> );
+document.querySelector('#d2').innerText = numberWithCommas( <%=distancingval2%> );
+document.querySelector('#d3').innerText = numberWithCommas( <%=distancingval3%> );
+document.querySelector('#d4').innerText = numberWithCommas( <%=distancingval4%> );
+document.querySelector('#d5').innerText = numberWithCommas( <%=distancingval5%> );
+document.querySelector('#d6').innerText = numberWithCommas( <%=distancingval6%> );
+document.querySelector('#d7').innerText = numberWithCommas( <%=distancingval7%> );
+document.querySelector('#d8').innerText = numberWithCommas( <%=distancingval8%> );
+document.querySelector('#d9').innerText = numberWithCommas( <%=distancingval9%> );
+document.querySelector('#d10').innerText = numberWithCommas( <%=distancingval10%> );
+document.querySelector('#d11').innerText = numberWithCommas( <%=distancingval11%> );
+document.querySelector('#d12').innerText = numberWithCommas( <%=distancingval12%> );
+document.querySelector('#d13').innerText = numberWithCommas( <%=distancingval13%> );
+document.querySelector('#d14').innerText = numberWithCommas( <%=distancingval14%> );
+document.querySelector('#d15').innerText = numberWithCommas( <%=distancingval15%> );
+document.querySelector('#d16').innerText = numberWithCommas( <%=distancingval16%> );
+document.querySelector('#d17').innerText = numberWithCommas( <%=distancingval17%> );
 
 
 </script>
