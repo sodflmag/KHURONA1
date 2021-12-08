@@ -69,9 +69,27 @@
 - 해외 최신 안전 소식을 헤드라인으로 제공
 - 출국 전 참고해야 할 외교부 최신 공지사항 제공
 
+#### Built with
+
+<ol>
+<ul>
+	<li> web
+		<ul>
+		<li>Node.js</li>
+		<li>Express</li>
+		<li>EJS</li>
+		</ul>
+	<li>API handler</li>
+	<ul>
+	<li>Request API</li>
+	<li>Cmd curl</li>
+	<li>XMLHttpRequest</li>
+	</ul>		
+</ul>
+</ol>
 
 # Getting Started(Installation)
-
+<hr>
 
 #### Development Environment
 
