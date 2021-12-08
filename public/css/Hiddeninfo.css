@@ -203,7 +203,7 @@ padding-left:10px;
 }
 
 .travel-blocks:nth-last-child(1) {
-border-bottom: 2px dotted gray;
+border-bottom: 1px solid gray;
 }
 
 .travel-blocks span {

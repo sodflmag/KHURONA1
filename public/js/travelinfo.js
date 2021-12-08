@@ -29,8 +29,11 @@ function JsonToVisibleInfo(jsonfile) {
     // random으로 8개 뽑아옴
 
     let id_arr = []; // 중복 요소가 들어가는지 체크하는 배열, 고유한 id 값이 들어감
-
-    for (let i = 0; i < 8; i++) {
+    const upperbound_len = jsonfile["response"]["body"]['items']['item'].length;
+    const upperbound = upperbound_len < 8 ? upperbound_len : 8;
+    // 둘 중 작은 값이 상한값
+    console.log(upperbound);
+    for (let i = 0; i < upperbound; i++) {
         const randomnum = Math.floor(Math.random() * length);
         // 0 ~ length - 1 사이의 난수 생성
         // 랜덤하게 8개 요소를 뽑아온다.
