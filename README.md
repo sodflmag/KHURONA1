@@ -1,4 +1,3 @@
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -132,8 +131,23 @@ app.js를 실행합니다.
 
 # Usage
 
-데모, 웹페이지 스크린샷, 코드 예시
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+> ## 메인 페이지
+
+<img src="/uploads/590f0e49ef19fd71d75dcec9e6932c5b/full_page_guide.png">
+
+<br><br>
+
+> ## 지도 클릭 시 팝업 창
+
+<img src="/uploads/54cb20a98d418aed8a3511c4cc253a0e/pop_up_guide.png">
+
+<br><br>
+
+> ## 선별 진료소 검색 페이지
+
+<img src="/uploads/9aab74bc1fd26e8ed613e8d58a7260b1/center_guide.png">
+
+<br><br>
 
 # Roadmap
 
