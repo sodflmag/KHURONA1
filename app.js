@@ -22,7 +22,7 @@ let endCreateDt = `${year}${month}${day}`;
 
 // month, date의 경우 10보다 작아지는 경우 앞에 0을 붙여줘야 정상적인 URL 생성이 가능함.
 const url = "http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson?";
-const service_key1 = "680%2FgyPOpacfjvTYIO1H2rHe4F%2FfdZV1jVBWfNkVZt8XL9zsYRp%2BbIO2%2FGwKolSMM6RcViMLiPgq4S%2BQJhROFQ%3D%3D";
+const service_key1 = 'ENTER YOUR API KEY';
 const pageNo = "2";
 const numofRows = "10";
 
@@ -62,7 +62,7 @@ let values = [];
 
 function notification() {
     const url = "http://apis.data.go.kr/1262000/NoticeService2/getNoticeList2?";
-    const service_key2 = "AphC66GHAr%2Fsigd0y6R2i5kd0bw6DjE1I86L67QSSX16i4uzVjGh%2FRUINHg54kJIL9ADbF4lS3tCI4MxiRvxVA%3D%3D";
+    const service_key2 = 'ENTER YOUR API KEY';
     const pageNo = "1";
     const numofRows = "1";
     const requestURL = `${url}serviceKey=${service_key2}&pageNo=${pageNo}&numoFRows=${numofRows}&returnType=XML`;

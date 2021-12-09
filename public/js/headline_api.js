@@ -4,7 +4,7 @@ function m() {
 var fs = require('fs');
 const request = require("request");
 const convert = require('xml-js');
-const service_key = "AphC66GHAr%2Fsigd0y6R2i5kd0bw6DjE1I86L67QSSX16i4uzVjGh%2FRUINHg54kJIL9ADbF4lS3tCI4MxiRvxVA%3D%3D"
+const service_key = 'ENTER YOUR API KEY'
 const requestURL = `http://apis.data.go.kr/1262000/CountryNoticeService/getCountryNoticeList?serviceKey=${service_key}&numOfRows=10&pageNo=1`;
 
 

@@ -3,8 +3,7 @@ function getAPIInfo(AREACODE, CONTENT_TYPE_ID) {
     const page_no = 1;
     const mobile_os = "ETC"; // 컴퓨터 웹페이지이므로
     const mobile_app = "TravelInfo"; // 서비스명
-    // const service_key = "680%2FgyPOpacfjvTYIO1H2rHe4F%2FfdZV1jVBWfNkVZt8XL9zsYRp%2BbIO2%2FGwKolSMM6RcViMLiPgq4S%2BQJhROFQ%3D%3D";
-    const service_key = "AphC66GHAr%2Fsigd0y6R2i5kd0bw6DjE1I86L67QSSX16i4uzVjGh%2FRUINHg54kJIL9ADbF4lS3tCI4MxiRvxVA%3D%3D";
+    const service_key = 'ENTER YOUR API KEY';
     const url = `http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaBasedList?numOfRows=${num_of_rows}&pageNo=${page_no}&ServiceKey=${service_key}&contentTypeId=${CONTENT_TYPE_ID}&areaCode=${AREACODE}&MobileOS=${mobile_os}&MobileApp=${mobile_app}&listYN=Y&_type=json`;
     let jsonFile;
     return new Promise(function(resolve, reject) {
@@ -32,7 +31,6 @@ function JsonToVisibleInfo(jsonfile) {
     const upperbound_len = jsonfile["response"]["body"]['items']['item'].length;
     const upperbound = upperbound_len < 8 ? upperbound_len : 8;
     // 둘 중 작은 값이 상한값
-    console.log(upperbound);
     for (let i = 0; i < upperbound; i++) {
         const randomnum = Math.floor(Math.random() * length);
         // 0 ~ length - 1 사이의 난수 생성
