@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="/uploads/fccd0ecf31280b34aa9c472824515c45/khulogo.svg" alt="Logo" width="200">
+    <img src="https://user-images.githubusercontent.com/92130698/145664806-c9bb6ff8-d9f7-475b-b024-74f689534afb.png" alt="Logo" width="200">
   </a>
 
   <h3 align="center">KHURONA</h3>
@@ -129,9 +129,9 @@ VS Code 터미널에서 dependency modules를 설치해줍니다.
 > 제 1유형으로 개방 또는 범위 제약이 없는 저작물 5건을 이용하였으며, <br> 해당 저작물은 모두 무료로 다운로드 받으실 수
 > 있습니다. 상세정보는 [Data source](#data-source)를 참고해 주세요.<br>
 
-<img src="/uploads/fcf59e28decfede2f05f7d3ea714ce8f/API_request.png" width="1000">
+<img src="https://user-images.githubusercontent.com/92130698/145664827-a18e4ca7-249e-4ce1-9687-0da9902920f7.png" width="1000">
 <br>
-<img src="/uploads/d1bf1d2c82d1a148bc0127aefc69f67d/API_Key.png" width="1000">
+<img src="https://user-images.githubusercontent.com/92130698/145664833-3e8d31c0-b0c5-4cc8-913e-c62105c891cf.png" width="1000">
  <br>
  
 API Key를 발급 받아`/corona_info_map/public` 디렉토리에 위치한 
@@ -156,19 +156,19 @@ app.js를 실행합니다.
 
 > ## 메인 페이지
 
-<img src="/uploads/590f0e49ef19fd71d75dcec9e6932c5b/full_page_guide.png">
+<img src="https://user-images.githubusercontent.com/92130698/145664903-10049d38-29bd-40c4-b707-1ff0d6a8e99a.png">
 
 <br><br>
 
 > ## 지도 클릭 시 팝업 창
 
-<img src="/uploads/54cb20a98d418aed8a3511c4cc253a0e/pop_up_guide.png">
+<img src="https://user-images.githubusercontent.com/92130698/145664917-820449e8-78d2-4162-8b4f-707bb3e27314.png">
 
 <br><br>
 
 > ## 선별 진료소 검색 페이지
 
-<img src="/uploads/9aab74bc1fd26e8ed613e8d58a7260b1/center_guide.png">
+<img src="https://user-images.githubusercontent.com/92130698/145664918-a6699d0d-acf6-4674-a9ca-fc1894109b72.png">
 
 <br><br>
 
